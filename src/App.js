@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Footer from './components/Footer';
+import Sponsors from './components/Sponsors';
+import Noticias from './components/Noticias';
+import Nosotros from './components/Nosotros';
+import Curso from './components/Curso';
+import Comision from './components/Comision';
+import Afiliacion from './components/Afiliacion';
+import Contacto from './components/Contacto';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <main>
+        <Hero />
+        <Sponsors />
+        <Noticias />
+        <Nosotros />
+        <Curso />
+        <Comision />
+        <Afiliacion />
+        <Contacto />
+        {/* Próximas secciones: Sponsors, Noticias, Nosotros, Curso, Comisión, Afiliación, Contacto */}
+      </main>
+      <Footer />
     </div>
   );
 }
