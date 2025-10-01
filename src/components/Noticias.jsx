@@ -11,11 +11,11 @@ export default function Noticias() {
           <p>Conoce a los profesionales que forman parte de nuestra asociación</p>
         </div>
         <div className="noticias-grid">
-          <NoticiaCard featured src="/assets/seccion-arbitros.jpg" alt="Árbitros" />
-          <NoticiaCard flex src="/assets/lipari-grid.JPG" alt="Árbitro con bandera" />
-          <NoticiaCard src="/assets/guadap.jpg" alt="Árbitro sacando tarjeta" />
-          <NoticiaCard src="/assets/alejo3.jpg" alt="Nuevos árbitros en AFA" />
-          <NoticiaCard src="/assets/imagen-grid3.jpg" alt="Árbitro sacando tarjeta" />
+          <NoticiaCard featured src={process.env.PUBLIC_URL + '/assets/seccion-arbitros.JPG'} alt="Árbitros" />
+          <NoticiaCard flex src={process.env.PUBLIC_URL + '/assets/lipari-grid.jpg'} alt="Árbitro con bandera" />
+          <NoticiaCard src={process.env.PUBLIC_URL + '/assets/guadap.jpg'} alt="Árbitro sacando tarjeta" />
+          <NoticiaCard src={process.env.PUBLIC_URL + '/assets/alejo3.jpg'} alt="Nuevos árbitros en AFA" />
+          <NoticiaCard src={process.env.PUBLIC_URL + '/assets/imagen-grid3.jpg'} alt="Árbitro sacando tarjeta" />
         </div>
       </div>
     </section>

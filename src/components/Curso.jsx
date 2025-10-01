@@ -51,7 +51,7 @@ export default function Curso() {
 
           <div ref={ctaReveal.ref} className={"curso-cta" + (ctaReveal.visible ? ' fade-in-up' : '')}>
             <div className="curso-image">
-              <img loading="lazy" src="/assets/valor_mision.jpg" alt="Árbitros AADEP Córdoba" />
+              <img loading="lazy" src={process.env.PUBLIC_URL + '/assets/valor_mision.jpg'} alt="Árbitros AADEP Córdoba" />
             </div>
             {/* <div className="curso-inscripcion">
               <h4>¿Listo para comenzar?</h4>

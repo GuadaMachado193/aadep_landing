@@ -12,14 +12,14 @@ export default function Sponsors() {
         </div>
 
         <div className="d-flex justify-content-center gap-4 flex-wrap">
-          <SponsorCard src="/assets/ligas/LigaBeccarVarela.png" title="Liga Beccar Varela" subtitle="Fútbol Provincial" />
-          <SponsorCard src="/assets/ligas/LigaBellvillense.png" title="Liga Bellvillense" subtitle="Fútbol Provincial" />
-          <SponsorCard src="/assets/ligas/LigaColon.png" title="Liga Colón" subtitle="Fútbol Provincial" />
-          <SponsorCard src="/assets/ligas/LigaCordobesa.png" title="Liga Cordobesa" subtitle="Fútbol Provincial" />
-          <SponsorCard src="/assets/ligas/liga-indep.jpeg" title="Liga Independiente de Fútbol" subtitle="Fútbol Provincial" />
-          <SponsorCard src="/assets/ligas/LigadelSur.png" title="Liga del Sur" subtitle="Fútbol Provincial" />
-          <SponsorCard src="/assets/ligas/LigaVillamariense.png" title="Liga Villamariense" subtitle="Fútbol Provincial" />
-          <SponsorCard src="/assets/ligas/LigaVillamariense.png" title="Liga Villamariense" subtitle="Fútbol Provincial" />
+          <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaBeccarVarela.png'} title="Liga Beccar Varela" subtitle="Fútbol Provincial" />
+          <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaBellvillense.png'} title="Liga Bellvillense" subtitle="Fútbol Provincial" />
+          <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaColon.png'} title="Liga Colón" subtitle="Fútbol Provincial" />
+          <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaCordobesa.png'} title="Liga Cordobesa" subtitle="Fútbol Provincial" />
+          <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/liga-indep.jpeg'} title="Liga Independiente de Fútbol" subtitle="Fútbol Provincial" />
+          <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigadelSur.png'} title="Liga del Sur" subtitle="Fútbol Provincial" />
+          <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaVillamariense.png'} title="Liga Villamariense" subtitle="Fútbol Provincial" />
+          <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/torneo-regional.png'} title="Torneo Regional Federal Amateur" subtitle="Fútbol Regional" />
         </div>
       </div>
     </section>

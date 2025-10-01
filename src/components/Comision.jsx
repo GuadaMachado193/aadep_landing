@@ -14,9 +14,9 @@ export default function Comision() {
           <p>Conoce a los líderes que dirigen nuestra asociación</p>
         </div>
         <div className="comision-grid">
-          <MiembroCard src="/assets/matias_ezequiel_billone.jpg" nombre="Matías Ezequiel Billone Carpio" cargo="Presidente" />
-          <MiembroCard src="/assets/comision-sosa.jpg" nombre="Leandro Andrés Sosa Abrile" cargo="Tesorero" />
-          <MiembroCard src="/assets/alba-comision.jpg" nombre="Alba Noemi León" cargo="Vocal Titular" />
+          <MiembroCard src={process.env.PUBLIC_URL + '/assets/matias_ezequiel_billone.jpg'} nombre="Matías Ezequiel Billone Carpio" cargo="Presidente" />
+          <MiembroCard src={process.env.PUBLIC_URL + '/assets/comision-sosa.jpg'} nombre="Leandro Andrés Sosa Abrile" cargo="Tesorero" />
+          <MiembroCard src={process.env.PUBLIC_URL + '/assets/alba-comision.jpg'} nombre="Alba Noemi León" cargo="Vocal Titular" />
         </div>
       </div>
     </section>

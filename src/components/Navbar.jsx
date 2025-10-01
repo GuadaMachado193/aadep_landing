@@ -43,7 +43,7 @@ export default function Navbar() {
         <div className="nav-container">
           <div className="logo-container">
             <a href="#home" onClick={onNavClick} aria-label="Ir al inicio">
-              <img src="/assets/aadep-logo.png" alt="Logo AADEP" className="logo" />
+              <img src={process.env.PUBLIC_URL + '/assets/aadep-logo.png'} alt="Logo AADEP" className="logo" />
             </a>
           </div>
 
