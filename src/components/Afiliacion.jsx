@@ -15,6 +15,13 @@ export default function Afiliacion() {
                   <p>Sindicato de Árbitros</p>
                 </div>
               </div>
+              <div className="sponsor-item">
+                <img src="/assets/ligas/consejo-federal-afa.png" alt="CFFA - Consejo federal de AFA" />
+                <div className="sponsor-info">
+                  <h4>CFFA</h4>
+                  <p>Consejo federal de AFA</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

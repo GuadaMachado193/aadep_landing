@@ -49,11 +49,11 @@ export default function Navbar() {
 
           <ul className={'nav-links' + (open ? ' active' : '')}>
             <li><a className={activeId==='home'? 'active':''} href="#home" onClick={onNavClick}>Inicio</a></li>
+            <li><a className={activeId==='noticias'? 'active':''} href="#noticias" onClick={onNavClick}>Noticias</a></li>
             <li><a className={activeId==='nosotros'? 'active':''} href="#nosotros" onClick={onNavClick}>Nosotros</a></li>
             <li><a className={activeId==='curso'? 'active':''} href="#curso" onClick={onNavClick}>Curso de Árbitros</a></li>
             <li><a className={activeId==='comision'? 'active':''} href="#comision" onClick={onNavClick}>Comisión Directiva</a></li>
             <li><a className={activeId==='contacto'? 'active':''} href="#contacto" onClick={onNavClick}>Contacto</a></li>
-            <li><a className={activeId==='noticias'? 'active':''} href="#noticias" onClick={onNavClick}>Noticias</a></li>
           </ul>
 
           <div className="nav-actions">

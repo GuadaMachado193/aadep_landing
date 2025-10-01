@@ -1,0 +1,95 @@
+/* Sección Comisión Directiva */
+.comision {
+    background: var(--light-gray);
+  }
+  
+  /* Grid responsivo */
+  .comision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Tarjeta de miembro */
+  .miembro-card {
+    position: relative;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 400px;
+  }
+  
+  .miembro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    outline: 2px solid rgba(0,0,0,0.05);
+  }
+  
+  /* Imagen */
+  .miembro-image {
+    position: relative;
+    height: 300px; 
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .miembro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center 15%; /* valor por defecto */
+    transition: var(--transition);
+  }
+  
+  .miembro-card:hover .miembro-image img {
+    transform: scale(1.05);
+  }
+  
+  /* Overlay */
+  .miembro-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+    opacity: 0.5; /* inicio tenue */
+    transition: var(--transition);
+  }
+  
+  .miembro-card:hover .miembro-overlay {
+    opacity: 1;
+  }
+  
+  /* Info del miembro */
+  .miembro-info {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .miembro-info h3 {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .miembro-cargo {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  /* 🎯 Ajustes específicos por cargo */
+  .miembro-image img.presidente {
+    object-position: center 40%; /* sube un poco más la cara */
+  }
+  
+  .miembro-image img.tesorero {
+    object-position: center top; /* enfoca lo más arriba posible */
+  }
+  
+  .miembro-image img.vocal {
+    object-position: center 20%; /* un poco más abajo */
+  }
+  
