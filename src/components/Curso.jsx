@@ -40,8 +40,8 @@ export default function Curso() {
             <div className="curso-requisitos">
               <h4>Requisitos para inscribirse:</h4>
               <ul>
-                <li>✅ Edad mínima: 18 años</li>
-                <li>✅ Educación secundaria completa</li>
+                <li>✅ Edad mínima: 16 años</li>
+                <li>✅ Educación secundaria completa o en curso</li>
                 <li>✅ Buena condición física</li>
                 <li>✅ Disponibilidad para entrenamientos</li>
                 <li>✅ Compromiso con la ética deportiva</li>

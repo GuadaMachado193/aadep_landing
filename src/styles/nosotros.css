@@ -1,0 +1,246 @@
+/* --- EN LA SECCIÓN PADRE --- */
+.nosotros {
+    /* 1. Definimos el color de ESTA sección en una variable local */
+    --current-bg: var(--light-gray);
+
+    /* 2. Usamos esa variable para el fondo real */
+    background: var(--current-bg);
+    
+    /* ... resto de estilos ... */
+}
+
+/* --- EN EL DEGRADADO --- */
+.text-gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    pointer-events: none;
+    
+    /* 3. ¡MAGIA! El degradado termina en el color definido arriba (--current-bg)
+       Independientemente de si es gris, blanco, negro o rojo. */
+    background: linear-gradient(to bottom, rgba(255,255,255,0), var(--current-bg));
+}
+
+/* Nosotros Section */
+
+.nosotros {
+
+    background: var(--light-gray);
+    
+    }
+    
+    
+    
+    .nosotros-content {
+    
+    max-width: 1000px;
+    
+    margin: 0 auto;
+    
+    }
+    
+    
+    
+    .nosotros-text {
+    
+    margin-bottom: 3rem;
+    
+    }
+    
+    
+    
+    .nosotros-text p {
+    
+    font-size: 1.1rem;
+    
+    line-height: 1.8;
+    
+    margin-bottom: 1.5rem;
+    
+    color: var(--text-light);
+    
+    }
+    
+    
+    
+    .nosotros-info {
+    
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+    gap: 2rem;
+    
+    margin: 3rem 0;
+    
+    }
+    
+    
+    
+    .info-item {
+    
+    background: var(--white);
+    
+    padding: 2rem;
+    
+    border-radius: var(--border-radius);
+    
+    box-shadow: var(--shadow);
+    
+    }
+    
+    
+    
+    .info-item h3 {
+    
+    color: var(--primary-color);
+    
+    font-size: 1.5rem;
+    
+    margin-bottom: 1rem;
+    
+    }
+    
+    
+    
+    .valores-list {
+    
+    list-style: none;
+    
+    padding: 0;
+    
+    }
+    
+    
+    
+    .valores-list li {
+    
+    padding: 0.5rem 0;
+    
+    border-bottom: 1px solid var(--border-color);
+    
+    }
+    
+    
+    
+    .valores-list li:last-child {
+    
+    border-bottom: none;
+    
+    }
+    
+    
+    
+    .nosotros-stats {
+    
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    
+    gap: 2rem;
+    
+    margin-top: 3rem;
+    
+    }
+    
+    
+    
+    .stat-card {
+    
+    text-align: center;
+    
+    background: var(--white);
+    
+    padding: 2rem;
+    
+    border-radius: var(--border-radius);
+    
+    box-shadow: var(--shadow);
+    
+    }
+    
+    
+    
+    .stat-number {
+    
+    display: block;
+    
+    font-size: 3rem;
+    
+    font-weight: 700;
+    
+    color: var(--primary-color);
+    
+    margin-bottom: 0.5rem;
+    
+    }
+    
+    
+    
+    .stat-label {
+    
+    color: var(--text-light);
+    
+    font-weight: 500;
+    
+    }
+
+
+    /* Contenedor del texto */
+.text-wrapper {
+    position: relative;
+    transition: max-height 0.5s ease-in-out;
+    overflow: hidden;
+  }
+  
+  /* Estado Colapsado: Define la altura visible inicial */
+  .text-wrapper.collapsed {
+    max-height: 120px; /* Ajusta este valor según cuánto texto quieras mostrar al principio */
+  }
+  
+  /* Estado Expandido: Deja ver todo el contenido */
+  .text-wrapper.expanded {
+    max-height: 1000px; /* Un valor alto suficiente para cubrir todo el texto */
+  }
+  
+  /* El degradado (Fade out) */
+  .text-gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Altura del degradado */
+    /* Ajusta el último color (white) al color de fondo de tu sección */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    pointer-events: none; /* Permite clicks a través del degradado si fuera necesario */
+  }
+  
+  /* Botón Leer más */
+  .read-more-btn {
+    background: none;
+    border: none;
+    color: #007bff; /* Color de acento de tu marca */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+  }
+  
+  .read-more-btn:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animación de la flecha */
+  .arrow-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .arrow-icon.rotated {
+    transform: rotate(180deg);
+  }
