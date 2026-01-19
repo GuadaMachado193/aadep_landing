@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-image">
-        <img src={process.env.PUBLIC_URL +'../assets/foto_pablo.jpg'} alt="Árbitros en acción" className="hero-bg" />
+        <img src={process.env.PUBLIC_URL + '/assets/alejo.png.jpg'} alt="Árbitros en acción" className="hero-bg" />
         <div className="hero-overlay"></div>
       </div>
 

@@ -32,21 +32,28 @@ export default function Contacto() {
                 <div className="contacto-icon">📍</div>
                 <div className="contacto-text">
                   <h4>Nuestra Sede</h4>
-                  <p>Estados Unidos 2840<br/>Córdoba, Argentina</p>
+                  <p>Av. Principal 123,<br/>Córdoba, Argentina</p>
                 </div>
               </div>
               <div className="contacto-item">
                 <div className="contacto-icon">📧</div>
                 <div className="contacto-text">
                   <h4>Email</h4>
-                  <p>aadep.cba@gmail.com</p>
+                  <p>aadepoficial@gmail.com</p>
                 </div>
               </div>
               <div className="contacto-item">
                 <div className="contacto-icon">📱</div>
                 <div className="contacto-text">
                   <h4>Teléfono</h4>
-                  <p>351-5728947</p>
+                  <p>+54 351 1234567</p>
+                </div>
+              </div>
+              <div className="contacto-item">
+                <div className="contacto-icon">⏰</div>
+                <div className="contacto-text">
+                  <h4>Horarios</h4>
+                  <p>Lunes a Viernes: 9:00 - 18:00</p>
                 </div>
               </div>
             </div>

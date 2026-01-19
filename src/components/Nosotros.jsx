@@ -1,13 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useCountUp from '../hooks/useCountUp';
 import useReveal from '../hooks/useReveal';
-import '../styles/nosotros.css'
-// Si tienes iconos instalados (como lucide-react o fontawesome) úsalos.
-// Aquí usaré un SVG inline simple para la flecha.
 
 export default function Nosotros() {
   const [visible, setVisible] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false); // Nuevo estado para el texto
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -22,10 +18,6 @@ export default function Nosotros() {
     return () => obs.disconnect();
   }, []);
 
-  const toggleExpand = () => {
-    setIsExpanded(!isExpanded);
-  };
-
   return (
     <section className="nosotros" id="nosotros" ref={sectionRef}>
       <div className="container">
@@ -34,26 +26,8 @@ export default function Nosotros() {
             <div className="section-header">
               <h2>Sobre AADEP</h2>
               <h3>Quienes Somos</h3>
-              
-              {/* Contenedor del texto colapsable */}
-              <div className={`text-wrapper ${isExpanded ? 'expanded' : 'collapsed'}`}>
-                <p>La Asociación de Árbitros Deportivos de Córdoba nace en 2015, marcando el comienzo de una nueva etapa de profesionalización del arbitraje en la provincia. Su creación tuvo como objetivo institucionalizar un servicio que, durante más de 20 años, se había brindado de manera ininterrumpida en las diversas ligas de Córdoba, así como en los torneos federales y las categorías superiores del fútbol argentino.</p>
-                <p>Formado por árbitros, ex árbitros y dirigentes, la asociación tiene como objetivo no solo brindar un servicio formal y profesional sino además proyectar árbitros a nivel nacional manteniendo siempre el compromiso de formar buenas personas.</p>
-                
-                {/* Degradado: Solo se muestra si NO está expandido */}
-                {!isExpanded && <div className="text-gradient-overlay"></div>}
-              </div>
-
-              {/* Botón para expandir/colapsar */}
-              <button className="read-more-btn" onClick={toggleExpand}>
-                {isExpanded ? 'Leer menos' : 'Leer más'}
-                <svg 
-                  className={`arrow-icon ${isExpanded ? 'rotated' : ''}`} 
-                  width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
+              <p>La Asociación de Árbitros Deportivos de Córdoba nace en 2015, marcando el comienzo de una nueva etapa de profesionalización del arbitraje en la provincia. Su creación tuvo como objetivo institucionalizar un servicio que, durante más de 20 años, se había brindado de manera ininterrumpida en las diversas ligas de Córdoba, así como en los torneos federales y las categorías superiores del fútbol argentino.</p>
+              <p>Formado por árbitros, ex árbitros y dirigentes, la asociación tiene como objetivo no solo brindar un servicio formal y profesional sino además proyectar árbitros a nivel nacional manteniendo siempre el compromiso de formar buenas personas.</p>
             </div>
 
             <div className="nosotros-info">
@@ -82,10 +56,9 @@ export default function Nosotros() {
   );
 }
 
-// ... El resto de tus componentes (Stats, InfoItem, StatCard) siguen igual ...
 function Stats({ visible }) {
-  const afiliados = useCountUp({ target: 70, duration: 1500, start: visible, suffix: '+' });
-  const experiencia = useCountUp({ target: 10, duration: 1200, start: visible });
+  const afiliados = useCountUp({ target: 150, duration: 1500, start: visible, suffix: '+' });
+  const experiencia = useCountUp({ target: 9, duration: 1200, start: visible });
   const ligas = useCountUp({ target: 8, duration: 1200, start: visible });
 
   return (
