@@ -6,21 +6,22 @@ export default function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-info">
-            <h3>AADEP OFICIAL</h3>
-            <p>Av. Principal 123<br/>Córdoba, Argentina</p>
-            <p><strong>Teléfono:</strong> +54 351 1234567</p>
-            <p><strong>Email:</strong> aadepoficial@gmail.com</p>
+            <h3>AADC</h3>
+            <p>Estados Unidos 2840 <br/>Córdoba, Argentina</p>
+            <p><strong>Teléfono:</strong> +54 351-5728947</p>
+            <p><strong>Teléfono:</strong> +54 351-3905917</p>
+            <p><strong>Email:</strong> aadep.cba@gmail.com</p>
           </div>
 
           <div className="footer-links">
             <h4>Links rápidos</h4>
             <ul>
               <li><a href="#home">Inicio</a></li>
+              <li><a href="#noticias">Árbitros</a></li>
               <li><a href="#nosotros">Nosotros</a></li>
               <li><a href="#curso">Curso de Árbitros</a></li>
               <li><a href="#comision">Comisión Directiva</a></li>
               <li><a href="#contacto">Contacto</a></li>
-              <li><a href="#noticias">Noticias</a></li>
               <li><a href="#afiliacion">Afiliarse</a></li>
             </ul>
           </div>
@@ -28,15 +29,15 @@ export default function Footer() {
           <div className="footer-social">
             <h4>Nuestras redes sociales</h4>
             <div className="social-links">
-              <a href="#" className="social-link" aria-label="Facebook">Facebook</a>
-              <a href="#" className="social-link" aria-label="Instagram">Instagram</a>
-              <a href="#" className="social-link" aria-label="Twitter">Twitter</a>
+              <a href="https://www.facebook.com/profile.php?id=100012370383824" className="social-link" aria-label="Facebook">Facebook</a>
+              <a href="https://www.instagram.com/aadep_cordoba/" className="social-link" aria-label="Instagram">Instagram</a>
+          
             </div>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2024 <strong>AADEP OFICIAL</strong> - Todos los Derechos Reservados.</p>
+          <p>&copy; 2026 <strong>Asociación de Árbitros Deportivos de Córdoba</strong> - Todos los Derechos Reservados.</p>
         </div>
       </div>
     </footer>
