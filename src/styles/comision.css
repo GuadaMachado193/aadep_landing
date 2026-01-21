@@ -33,14 +33,37 @@
     height: 300px; 
     width: 100%;
     overflow: hidden;
+    background: var(--light-gray); /* placeholder base */
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+  
+    /* asegura que la tarjeta no colapse si la imagen falla */
+    display: block;
   }
   
+  /* Skeleton/shimmer debajo de la imagen para mejorar la percepción de carga */
+  .miembro-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(243,244,246,1) 25%, rgba(230,238,248,1) 50%, rgba(243,244,246,1) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s linear infinite;
+    z-index: 0;
+  }
+
   .miembro-image img {
+    position: relative;
+    z-index: 1; /* encima del skeleton */
     width: 100%;
     height: 100%;
     object-fit: cover; 
     object-position: center 15%; /* valor por defecto */
-    transition: var(--transition);
+    transition: transform .45s ease, filter .25s ease, opacity .35s ease;
+    opacity: 1; /* mantenemos visible cuando carga; handler onError/ onLoad puede ajustarlo si se desea */
+    display: block;
+    background-color: var(--light-gray);
+    /* Forzar visibilidad si alguna regla la hace transparente */
+    opacity: 1 !important;
   }
   
   .miembro-card:hover .miembro-image img {
@@ -54,13 +77,17 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 1));
-    opacity: 0.5; /* inicio tenue */
-    transition: var(--transition);
+    /* menos agresivo: degradado suave hacia abajo */
+    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.45) 100%);
+    opacity: 0.35; /* inicio tenue */
+    transition: opacity .35s ease, background .35s ease;
+    pointer-events: none; /* no interfiere con accesibilidad del contenido */
+    mix-blend-mode: multiply;
+    z-index: 2; /* asegurar que el overlay se pinte por encima del img pero sin ocultarla (es semitransparente) */
   }
-  
+
   .miembro-card:hover .miembro-overlay {
-    opacity: 1;
+    opacity: 0.65; /* más contraste al hacer hover */
   }
   
   /* Info del miembro */
@@ -91,5 +118,46 @@
   
   .miembro-image img.vocal {
     object-position: center 20%; /* un poco más abajo */
+  }
+
+  /* Si el SVG se importó como componente (SVGR), asegurarnos que ocupa el mismo espacio */
+  .miembro-image svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1; /* encima del shimmer */
+  }
+
+  
+  /* Mejoras responsive: altura flexible en pantallas pequeñas */
+  @media (max-width: 768px) {
+    .miembro-card {
+      height: auto;
+    }
+    .miembro-image {
+      height: 220px;
+    }
+  }
+
+  /* Accesibilidad: foco visible para la tarjeta (keyboard navigation) */
+  .miembro-card:focus-within {
+    outline: 3px solid rgba(2,6,23,0.06);
+    box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  }
+
+  /* cuando la imagen falla y se oculta, usar un placeholder visual (clase aplicada desde JS si se desea) */
+  .miembro-image .img-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-light);
+    font-weight: 600;
+    background: linear-gradient(180deg, var(--light-gray), #e6eef8);
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
   }
   

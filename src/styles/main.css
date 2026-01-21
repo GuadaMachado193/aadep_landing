@@ -1,3 +1,85 @@
+
+.miembro-image img.tesorero {
+    object-position: center top;
+}
+.miembro-image img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    transition: transform .45s ease, filter .25s ease, opacity .35s ease;
+    opacity: 1;
+    display: block;
+    background-color: var(--light-gray);
+    opacity: 1 !important;
+}
+img, svg {
+    vertical-align: middle;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: auto;
+    margin-left: auto;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+}
+body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    text-align: var(--bs-body-text-align);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+:root {
+    --primary-color: #0b1f3a;
+    --secondary-color: #0ea5e9;
+    --accent-color: #22c55e;
+    --text-dark: #0f172a;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --light-gray: #f8fafc;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 30px -12px rgba(2, 6, 23, 0.25);
+    --border-radius: 12px;
+    --transition: all 0.25s ease;
+}
+
+
 /* Reset y variables CSS */
 :root {
     /* Paleta inspirada en refereepro (azules profundos + acentos limpios) */
@@ -65,15 +147,16 @@ body {
 }
 
 .navbar.scrolled .nav-container {
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.4rem;
 }
 
 .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0.5rem;
+    /* reducir altura de la barra: menos padding vertical */
+    padding: 0.7rem 0.6rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -84,14 +167,15 @@ body {
 }
 
 .logo {
-    height: 60px;
+    height: 50px; /* logo un poco más pequeño */
     width: auto;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    /* menos separación entre enlaces para compactar la nav */
+    gap: 1.25rem;
     align-items: center;
 }
 
@@ -133,18 +217,21 @@ body {
     display: flex;
     align-items: center;
 
-    gap: 8rem;
+    /* reducir espacio entre acciones (logo / links / botones) */
+    gap: 3.5rem;
 }
 
 .portal-btn {
     background: var(--primary-color);
     border: none;
     color: var(--white);
-    padding: 0.75rem 2rem;
-    border-radius: var(--border-radius);
-    font-weight: 400;
+    /* más compacto */
+    padding: 0.5rem 1.25rem;
+    border-radius: calc(var(--border-radius) - 4px);
+    font-weight: 500;
+    font-size: 0.94rem;
     transition: var(--transition);
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 .portal-btn:hover {
@@ -223,27 +310,6 @@ body {
     font-weight: 500;
 }
 
-.scroll-cue {
-    display: inline-flex;
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 36px;
-    height: 36px;
-    border-radius: 999px;
-    border: 2px solid rgba(255,255,255,0.8);
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-decoration: none;
-    transition: transform .2s ease, background .2s ease;
-}
-
-.scroll-cue:hover {
-    transform: translateY(2px);
-    background: rgba(255,255,255,0.1);
-}
 
 .chevron {
     display: inline-block;
