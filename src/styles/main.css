@@ -962,10 +962,6 @@ footer {
         gap: 2rem;
     }
 
-    .noticia-card.featured {
-        grid-column: span 1;
-    }
-
    
     .comision-grid {
         grid-template-columns: 1fr;
