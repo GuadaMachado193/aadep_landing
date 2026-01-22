@@ -22,7 +22,6 @@ export default function Footer() {
               <li><a href="#curso">Curso de Árbitros</a></li>
               <li><a href="#comision">Comisión Directiva</a></li>
               <li><a href="#contacto">Contacto</a></li>
-              <li><a href="#afiliacion">Afiliarse</a></li>
             </ul>
           </div>
 
