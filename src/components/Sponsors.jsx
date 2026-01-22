@@ -5,12 +5,34 @@ export default function Sponsors() {
   const scrollRef = useRef(null); // <--- 2. Creamos la referencia
 
   // Función para mover el scroll
+  // Función para mover el scroll con Bucle (Loop)
   const scroll = (direction) => {
     const { current } = scrollRef;
+    
     if (current) {
-      // Mueve 300px a la izquierda o derecha
-      const scrollAmount = direction === 'left' ? -300 : 300;
-      current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      const { scrollLeft, scrollWidth, clientWidth } = current;
+      const scrollAmount = 300; // Lo que mueve cada clic (ancho de tarjeta aprox)
+      
+      if (direction === 'left') {
+        // Lógica Izquierda: ¿Estamos al principio?
+        if (scrollLeft === 0) {
+          // Si sí, ir al FINAL
+          current.scrollTo({ left: scrollWidth, behavior: 'smooth' });
+        } else {
+          // Si no, mover a la izquierda normal
+          current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        }
+      } else {
+        // Lógica Derecha: ¿Llegamos al final?
+        // (Usamos un margen de 5px por si los decimales fallan)
+        if (scrollLeft + clientWidth >= scrollWidth - 5) {
+          // Si sí, volver al PRINCIPIO
+          current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          // Si no, mover a la derecha normal
+          current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
     }
   };
 
