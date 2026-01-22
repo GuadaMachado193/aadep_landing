@@ -496,7 +496,54 @@ section[id] {
   }
 }
 
-/* Carousel */
+/* Estilos para los botones del carrusel */
+.scroll-btn {
+  display: none; /* Ocultos por defecto en PC */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.scroll-btn:active {
+  background-color: #f0f0f0;
+  transform: translateY(-50%) scale(0.95);
+}
+
+.scroll-btn.left {
+  left: -10px; /* Posición a la izquierda */
+}
+
+.scroll-btn.right {
+  right: -10px; /* Posición a la derecha */
+}
+
+/* MOSTRAR SOLO EN MÓVIL */
+@media (max-width: 768px) {
+  .scroll-btn {
+    display: flex; /* ¡Aquí aparecen! */
+  }
+  
+  /* Ajustamos un poco el padding del contenedor para que las flechas no tapen el contenido */
+  .carousel-wrapper {
+    padding: 0 10px;
+  }
+}
+
+
+/* Carousel
 .carousel-control-prev,
 .carousel-control-next {
     width: 50px;
@@ -524,7 +571,7 @@ section[id] {
     border-radius: 50%;
     width: 12px;
     height: 12px;
-}
+} */
 
 /* Curso de Árbitros */
 .curso-arbitros {
