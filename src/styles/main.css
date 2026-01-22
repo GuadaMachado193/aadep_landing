@@ -461,6 +461,40 @@ section[id] {
     color: var(--text-light);
     font-size: 0.9rem;
 }
+/* ESTILOS BASE (Escritorio / PC) */
+.ligas-grid {
+  display: flex;
+  flex-wrap: wrap;           /* Que bajen si no caben */
+  justify-content: center;   /* Centrados */
+  gap: 1.5rem;               /* Espacio entre tarjetas */
+  padding: 1rem 0;
+}
+
+/* ESTILOS MÓVIL (Carrusel) */
+@media (max-width: 768px) {
+  .ligas-grid {
+    flex-wrap: nowrap;          /* ¡Importante! Obliga a estar en una línea */
+    justify-content: flex-start; /* Alineados a la izquierda */
+    overflow-x: auto;           /* Permite scroll horizontal */
+    scroll-snap-type: x mandatory; /* Efecto de "imán" al deslizar */
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iPhone */
+    padding-bottom: 20px;       /* Espacio para que no se corte la sombra */
+    
+    /* Ocultar barra de scroll fea (opcional) */
+    scrollbar-width: none;      /* Firefox */
+  }
+  
+  .ligas-grid::-webkit-scrollbar {
+    display: none;              /* Chrome/Safari */
+  }
+
+  /* Ajuste de las tarjetas individuales en móvil */
+  .ligas-grid .sponsor-item {
+    flex: 0 0 85%;              /* Ocupa el 85% del ancho de la pantalla */
+    scroll-snap-align: center;  /* Se centra automáticamente al soltar */
+    margin-right: 10px;         /* Un pequeño margen extra */
+  }
+}
 
 /* Carousel */
 .carousel-control-prev,
