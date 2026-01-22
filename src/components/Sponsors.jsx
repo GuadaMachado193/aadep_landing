@@ -12,7 +12,7 @@ export default function Sponsors() {
         </div>
 
         <div className="ligas-grid">
-  <SponsorCard ... />
+  
           <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaBeccarVarela.png'} title="Liga Beccar Varela" subtitle="Fútbol Provincial" />
           <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaBellvillense.png'} title="Liga Bellvillense" subtitle="Fútbol Provincial" />
           <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaColon.png'} title="Liga Colón" subtitle="Fútbol Provincial" />
