@@ -13,7 +13,7 @@ export default function Noticias() {
         <div className="noticias-grid">
           <NoticiaCard featured src={process.env.PUBLIC_URL + '/assets/seccion-arbitros.JPG'} alt="Árbitros" />
           <NoticiaCard flex src={process.env.PUBLIC_URL + '/assets/lipari-grid.jpg'} alt="Árbitro con bandera" />
-          <NoticiaCard src={process.env.PUBLIC_URL + '/assets/fulo2.png.jpeg'} alt="Árbitro sacando tarjeta" />
+          <NoticiaCard src={process.env.PUBLIC_URL + '/assets/guadap.jpg'} alt="Árbitro sacando tarjeta" />
           <NoticiaCard src={process.env.PUBLIC_URL + '/assets/alejo3.jpg'} alt="Nuevos árbitros en AFA" />
           <NoticiaCard src={process.env.PUBLIC_URL + '/assets/imagen-grid3.jpg'} alt="Árbitro sacando tarjeta" />
         </div>
