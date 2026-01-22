@@ -52,3 +52,55 @@
 .noticia-card:hover .noticia-image img {
     transform: scale(1.05);
 }
+
+/* --- ESTILOS EXISTENTES DE ESCRITORIO (No tocar) --- */
+/* (Asumo que aquí tienes tu grid normal) */
+
+
+/* --- NUEVOS ESTILOS PARA MÓVIL (Carrusel) --- */
+@media (max-width: 768px) {
+  
+  /* Convertimos la grilla en una fila flexible deslizante */
+  .noticias-grid {
+    display: flex !important;    /* Forzamos flex en lugar de grid */
+    flex-wrap: nowrap !important;
+    gap: 15px;
+    overflow-x: auto;            /* Habilitar scroll lateral */
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    
+    /* Ocultar barra de scroll */
+    scrollbar-width: none; 
+  }
+  
+  .noticias-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Ajustamos las tarjetas para que tengan el mismo tamaño en el carrusel */
+  .noticia-card {
+    flex: 0 0 85%;              /* Cada tarjeta ocupa 85% del ancho */
+    width: 85%;                 /* Asegurar ancho */
+    height: 300px;              /* Altura fija para uniformidad */
+    scroll-snap-align: center;
+    margin: 0;
+  }
+
+  /* Si tenías estilos especiales para 'featured', los anulamos en móvil */
+  .noticia-card.featured {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  
+  .noticia-image {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .noticia-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
