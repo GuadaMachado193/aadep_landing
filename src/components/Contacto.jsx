@@ -3,19 +3,50 @@ import React, { useState } from 'react';
 export default function Contacto() {
   const [form, setForm] = useState({ nombre: '', email: '', telefono: '', tema: '', mensaje: '' });
   const [notice, setNotice] = useState(null);
+  const [loading, setLoading] = useState(false); // Nuevo estado para deshabilitar botón mientras envía
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => { // Hacemos la función asíncrona
     e.preventDefault();
+    
+    // 1. Validación local
     const required = ['nombre', 'email', 'tema', 'mensaje'];
     const ok = required.every(k => form[k] && form[k].trim() !== '');
+    
     if (!ok) {
       setNotice({ type: 'error', msg: 'Por favor, completa todos los campos requeridos.' });
       return;
     }
-    setNotice({ type: 'success', msg: '¡Mensaje enviado correctamente! Te contactaremos pronto.' });
-    setForm({ nombre: '', email: '', telefono: '', tema: '', mensaje: '' });
+
+    // 2. Activamos modo "Cargando"
+    setLoading(true);
+    setNotice(null);
+
+    try {
+      // 3. Enviamos los datos a Formspree usando FETCH
+      const response = await fetch("https://formspree.io/f/mkojojye", {  // <--- ¡PEGA TU LINK AQUÍ!
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+      });
+
+      // 4. Verificamos si se envió bien
+      if (response.ok) {
+        setNotice({ type: 'success', msg: '¡Mensaje enviado correctamente! Te contactaremos pronto.' });
+        setForm({ nombre: '', email: '', telefono: '', tema: '', mensaje: '' }); // Limpiar formulario
+      } else {
+        // Si falló (ej: error en el servidor)
+        setNotice({ type: 'error', msg: 'Hubo un problema al enviar el mensaje. Intenta nuevamente.' });
+      }
+    } catch (error) {
+      // Si falló la conexión (internet)
+      setNotice({ type: 'error', msg: 'Error de conexión. Verifica tu internet.' });
+    } finally {
+      setLoading(false); // Desactivamos modo "Cargando"
+    }
   };
 
   return (
@@ -50,13 +81,6 @@ export default function Contacto() {
                   <p>+54 351 3905917</p>
                 </div>
               </div>
-              {/* <div className="contacto-item">
-                <div className="contacto-icon">⏰</div>
-                <div className="contacto-text">
-                  <h4>Horarios</h4>
-                  <p>Lunes a Viernes: 9:00 - 18:00</p>
-                </div>
-              </div> */}
             </div>
           </div>
 
@@ -93,7 +117,11 @@ export default function Contacto() {
                 <div className="form-group">
                   <textarea name="mensaje" placeholder="Tu mensaje" rows="5" value={form.mensaje} onChange={onChange} required></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary">Enviar mensaje</button>
+                
+                {/* Botón que cambia texto cuando está cargando */}
+                <button type="submit" className="btn btn-primary" disabled={loading}>
+                  {loading ? 'Enviando...' : 'Enviar mensaje'}
+                </button>
               </form>
             </div>
           </div>

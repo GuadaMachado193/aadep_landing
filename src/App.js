@@ -9,6 +9,7 @@ import Curso from './components/Curso';
 import Comision from './components/Comision';
 import Afiliacion from './components/Afiliacion';
 import Contacto from './components/Contacto';
+import BotonWhatsapp from './components/BotonWhatsapp';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         {/* Próximas secciones: Sponsors, Noticias, Nosotros, Curso, Comisión, Afiliación, Contacto */}
       </main>
       <Footer />
+      <BotonWhatsapp/>
     </div>
   );
 }
