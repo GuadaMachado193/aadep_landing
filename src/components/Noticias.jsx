@@ -54,7 +54,7 @@ export default function Noticias() {
              <NoticiaCard src={process.env.PUBLIC_URL + '/assets/pablo_billy.jpg'} alt="Árbitro sacando tarjeta" />
              <NoticiaCard src={process.env.PUBLIC_URL + '/assets/pre_temporada.png'} alt="Árbitro sacando tarjeta" />
              <NoticiaCard src={process.env.PUBLIC_URL + '/assets/eve_arbitro.png'} alt="Árbitro sacando tarjeta" />
-             <NoticiaCard src={process.env.PUBLIC_URL + '/assets/imagen-grid.jpg'} alt="Árbitro sacando tarjeta" />  
+       
 
           </div>
 
