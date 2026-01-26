@@ -104,3 +104,94 @@
     object-fit: cover;
   }
 }
+
+/* --- ESTILOS PARA LA GALERÍA MODAL --- */
+
+/* Fondo oscuro que cubre toda la pantalla */
+.galeria-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Negro casi opaco */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Caja blanca contenedora */
+.galeria-contenido {
+  background: #fff;
+  width: 100%;
+  max-width: 1000px;
+  height: 90vh; /* Ocupa el 90% de la altura */
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  overflow-y: auto; /* Permite bajar si hay muchas fotos */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Título de la galería */
+.galeria-contenido h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+/* Grid (Cuadrícula) de fotos */
+.galeria-grid-completa {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Se adapta a pantallas */
+  gap: 15px;
+}
+
+/* Las imágenes dentro de la galería */
+.foto-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.foto-item img:hover {
+  transform: scale(1.03);
+}
+
+/* Botón de cerrar (X) */
+.cerrar-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  z-index: 10;
+}
+
+.cerrar-btn:hover {
+  color: #ef4444; /* Rojo al pasar el mouse */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Ajuste para móvil */
+@media (max-width: 768px) {
+  .galeria-grid-completa {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en celular */
+  }
+}

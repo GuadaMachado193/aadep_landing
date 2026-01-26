@@ -1,29 +1,40 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import useReveal from '../hooks/useReveal';
 import '../styles/noticia.css';
 
+// 1. ORGANIZAMOS LAS FOTOS AQUÍ PARA NO REPETIR CÓDIGO
+const listaFotos = [
+  { id: 1, src: '/assets/seccion-arbitros.JPG', alt: 'Árbitros AADEP', featured: true },
+  { id: 2, src: '/assets/lipari-grid.jpg', alt: 'Árbitro con bandera', featured: false },
+  { id: 3, src: '/assets/guadap.jpg', alt: 'Árbitro sacando tarjeta', featured: false },
+  { id: 4, src: '/assets/alejo3.jpg', alt: 'Nuevos árbitros en AFA', featured: false },
+  { id: 5, src: '/assets/imagen-grid3.jpg', alt: 'Partido Liga Cordobesa', featured: false },
+  { id: 6, src: '/assets/pablo_billy.jpg', alt: 'Terna Arbitral', featured: false },
+  { id: 7, src: '/assets/pre_temporada.png', alt: 'Pretemporada', featured: false },
+  { id: 8, src: '/assets/eve_arbitro.png', alt: 'Arbitraje Femenino', featured: false },
+  { id: 9, src: '/assets/arbitros_partido.jpg', alt: 'Árbitros en acción', featured: false },
+  { id: 10, src: '/assets/arbitro_tarjeta.jpg', alt: 'Árbitro mostrando tarjeta', featured: false },
+  { id: 11, src: '/assets/arbitro_bandera.jpg', alt: 'Árbitro con bandera de línea', featured: false },
+  { id: 12, src: '/assets/arbitro_reunion.jpg', alt: 'Reunión de árbitros', featured: false },
+  { id: 13, src: '/assets/arbitro_entrenamiento.jpg', alt: 'Árbitro en entrenamiento', featured: false },
+  { id: 14, src: '/assets/arbitro_partido_nocturno.jpg', alt: 'Árbitro en partido nocturno', featured: false },
+  { id: 15, src: '/assets/arbitro_femenino.jpg', alt: 'Árbitro femenino en acción', featured: false },
+  // ... AQUÍ PUEDES AGREGAR TODAS LAS FOTOS QUE QUIERAS ...
+];
+
 export default function Noticias() {
   const scrollRef = useRef(null);
+  const [mostrarGaleria, setMostrarGaleria] = useState(false); // Estado para abrir/cerrar
 
-  // Misma función de "Bucle Infinito" que usamos en Ligas
   const scroll = (direction) => {
     const { current } = scrollRef;
     if (current) {
       const { scrollLeft, scrollWidth, clientWidth } = current;
-      const scrollAmount = 300; // Distancia del desplazamiento
-
+      const scrollAmount = 300;
       if (direction === 'left') {
-        if (scrollLeft === 0) {
-          current.scrollTo({ left: scrollWidth, behavior: 'smooth' });
-        } else {
-          current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        }
+        current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       } else {
-        if (scrollLeft + clientWidth >= scrollWidth - 5) {
-          current.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        }
+        current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
       }
     }
   };
@@ -36,33 +47,50 @@ export default function Noticias() {
           <p>Conoce a los profesionales que forman parte de nuestra asociación</p>
         </div>
 
-        {/* Agregamos el wrapper relativo para posicionar flechas */}
+        {/* --- CARRUSEL (Muestra solo las primeras 8 fotos o las que quieras) --- */}
         <div className="carousel-wrapper" style={{ position: 'relative' }}>
+          <button className="scroll-btn left" onClick={() => scroll('left')}>&#10094;</button>
           
-          {/* Botón Izquierda */}
-          <button className="scroll-btn left" onClick={() => scroll('left')}>
-            &#10094;
-          </button>
-
-          {/* Agregamos la ref={scrollRef} al contenedor */}
           <div className="noticias-grid" ref={scrollRef}>
-            <NoticiaCard featured src={process.env.PUBLIC_URL + '/assets/seccion-arbitros.JPG'} alt="Árbitros" />
-            <NoticiaCard flex src={process.env.PUBLIC_URL + '/assets/lipari-grid.jpg'} alt="Árbitro con bandera" />
-            <NoticiaCard src={process.env.PUBLIC_URL + '/assets/guadap.jpg'} alt="Árbitro sacando tarjeta" />
-            <NoticiaCard src={process.env.PUBLIC_URL + '/assets/alejo3.jpg'} alt="Nuevos árbitros en AFA" />
-            <NoticiaCard src={process.env.PUBLIC_URL + '/assets/imagen-grid3.jpg'} alt="Árbitro sacando tarjeta" />
-             <NoticiaCard src={process.env.PUBLIC_URL + '/assets/pablo_billy.jpg'} alt="Árbitro sacando tarjeta" />
-             <NoticiaCard src={process.env.PUBLIC_URL + '/assets/pre_temporada.png'} alt="Árbitro sacando tarjeta" />
-             <NoticiaCard src={process.env.PUBLIC_URL + '/assets/eve_arbitro.png'} alt="Árbitro sacando tarjeta" />
-       
-
+            {listaFotos.slice(0, 8).map((foto) => (
+              <NoticiaCard 
+                key={foto.id} 
+                featured={foto.featured} 
+                src={process.env.PUBLIC_URL + foto.src} 
+                alt={foto.alt} 
+              />
+            ))}
           </div>
 
-          {/* Botón Derecha */}
-          <button className="scroll-btn right" onClick={() => scroll('right')}>
-            &#10095;
+          <button className="scroll-btn right" onClick={() => scroll('right')}>&#10095;</button>
+        </div>
+
+        {/* BOTÓN PARA ABRIR LA GALERÍA COMPLETA */}
+        <div style={{ textAlign: 'center', marginTop: '30px' }}>
+          <button 
+            className="btn btn-primary" 
+            onClick={() => setMostrarGaleria(true)}
+          >
+            Ver Galería Completa 📸
           </button>
         </div>
+
+        {/* --- MODAL / GALERÍA FLOTANTE --- */}
+        {mostrarGaleria && (
+          <div className="galeria-modal" onClick={() => setMostrarGaleria(false)}>
+            <div className="galeria-contenido" onClick={(e) => e.stopPropagation()}>
+              <button className="cerrar-btn" onClick={() => setMostrarGaleria(false)}>×</button>
+              <h3>Galería de Fotos</h3>
+              <div className="galeria-grid-completa">
+                {listaFotos.map((foto) => (
+                  <div key={foto.id} className="foto-item">
+                    <img loading="lazy" src={process.env.PUBLIC_URL + foto.src} alt={foto.alt} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
       </div>
     </section>
