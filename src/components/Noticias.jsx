@@ -13,12 +13,23 @@ const listaFotos = [
   { id: 7, src: '/assets/pre_temporada.png', alt: 'Pretemporada', featured: false },
   { id: 8, src: '/assets/eve_arbitro.png', alt: 'Arbitraje Femenino', featured: false },
   { id: 9, src: '/assets/arbitros_partido.jpg', alt: 'Árbitros en acción', featured: false },
-  { id: 10, src: '/assets/arbitro_tarjeta.jpg', alt: 'Árbitro mostrando tarjeta', featured: false },
-  { id: 11, src: '/assets/arbitro_bandera.jpg', alt: 'Árbitro con bandera de línea', featured: false },
-  { id: 12, src: '/assets/arbitro_reunion.jpg', alt: 'Reunión de árbitros', featured: false },
-  { id: 13, src: '/assets/arbitro_entrenamiento.jpg', alt: 'Árbitro en entrenamiento', featured: false },
-  { id: 14, src: '/assets/arbitro_partido_nocturno.jpg', alt: 'Árbitro en partido nocturno', featured: false },
-  { id: 15, src: '/assets/arbitro_femenino.jpg', alt: 'Árbitro femenino en acción', featured: false },
+  { id: 10, src: '/assets/grid/aadc_grid.JPG', alt: 'Árbitro mostrando tarjeta', featured: false },
+  { id: 11, src: '/assets/grid/alba_grid.jpg', alt: 'Árbitro con bandera de línea', featured: false },
+  { id: 12, src: '/assets/grid/albert_grid.jpg', alt: 'Reunión de árbitros', featured: false },
+  { id: 13, src: '/assets/grid/altamirano_grid.jpg', alt: 'Árbitro en entrenamiento', featured: false },
+  { id: 14, src: '/assets/grid/atorri_grid.jpg', alt: 'Árbitro en partido nocturno', featured: false },
+  { id: 15, src: '/assets/grid/baldassi_grid.jpg', alt: 'Árbitro femenino en acción', featured: false },
+  { id: 16, src: '/assets/grid/david_grid.jpg', alt: 'Árbitro femenino en acción', featured: false },
+  { id: 17, src: '/assets/grid/gonzales_grid.jpg', alt: 'Árbitro femenino en acción', featured: false },
+  { id: 18, src: '/assets/grid/kevin_grid.JPG', alt: 'Árbitro femenino en acción', featured: false },
+  { id: 19, src: '/assets/grid/leguizamon_grid.jpg', alt: 'Árbitro femenino en acción', featured: false },
+  { id: 20, src: '/assets/grid/lopez_grid.jpg', alt: 'Árbitro femenino en acción', featured: false },
+  { id: 21, src: '/assets/grid/mario_grid.jpg', alt: 'Árbitro femenino en acción', featured: false },
+  { id: 22, src: '/assets/grid/marzzoli_grid.webp', alt: 'Árbitro femenino en acción', featured: false },
+  { id: 23, src: '/assets/grid/nelson_grid.jpg', alt: 'Árbitro femenino en acción', featured: false },
+  { id: 24, src: '/assets/grid/nn_grid.jpg', alt: 'Árbitro femenino en acción', featured: false },
+  { id: 25, src: '/assets/grid/nn2_grid.jpg', alt: 'Árbitro femenino en acción', featured: false },
+  { id: 26, src: '/assets/grid/vilca_grid.jpg', alt: 'Árbitro femenino en acción', featured: false },
   // ... AQUÍ PUEDES AGREGAR TODAS LAS FOTOS QUE QUIERAS ...
 ];
 
@@ -44,7 +55,7 @@ export default function Noticias() {
       <div className="container">
         <div className="section-header">
           <h2>Nuestros Árbitros</h2>
-          <p>Conoce a los profesionales que forman parte de nuestra asociación</p>
+          <p>Conoce a algunos de los profesionales que forman parte de nuestra asociación</p>
         </div>
 
         {/* --- CARRUSEL (Muestra solo las primeras 8 fotos o las que quieras) --- */}
