@@ -5,9 +5,9 @@ import '../styles/noticia.css';
 // 1. ORGANIZAMOS LAS FOTOS AQUÍ PARA NO REPETIR CÓDIGO
 const listaFotos = [
   { id: 1, src: '/assets/seccion-arbitros.webp', alt: 'Árbitros AADEP', featured: true },
-  { id: 2, src: '/assets/lipari-grid.jpg', alt: 'Árbitro con bandera', featured: false },
-  { id: 3, src: '/assets/guadap.jpg', alt: 'Árbitro sacando tarjeta', featured: false },
-  { id: 4, src: '/assets/alejo3.jpg', alt: 'Nuevos árbitros en AFA', featured: false },
+  { id: 2, src: '/assets/lipari-grid.jpg', alt: 'Árbitro bajo la lluvia', featured: false },
+  { id: 3, src: '/assets/guadap.jpg', alt: 'Árbitro cobrando fuera de juego', featured: false },
+  { id: 4, src: '/assets/alejo3.jpg', alt: 'Referee de negro', featured: false },
   { id: 5, src: '/assets/imagen-grid3.jpg', alt: 'Partido Liga Cordobesa', featured: false },
   { id: 6, src: '/assets/grid/pablo_billy.webp', alt: 'Terna Arbitral', featured: false },
   { id: 7, src: '/assets/grid/pre_temporada.webp', alt: 'Pretemporada', featured: false },
@@ -30,11 +30,13 @@ const listaFotos = [
   { id: 24, src: '/assets/grid/nn_grid.webp', alt: 'Árbitro futbol', featured: false },
   { id: 25, src: '/assets/grid/nn2_grid.webp', alt: 'Árbitro en cancha', featured: false },
   { id: 26, src: '/assets/grid/vilca_grid.webp', alt: 'Árbitro con asistentes', featured: false },
-  { id: 27, src: '/assets/grid/nano_grid.webp', alt: 'Árbitro saca tarjeta roja', featured: false },
+  { id: 27, src: '/assets/grid/fede_grid.webp', alt: 'Árbitro saca tarjeta roja', featured: false },
   { id: 28, src: '/assets/grid/lipari_grid.webp', alt: 'Árbitro tira moneda al aire', featured: false },
-  { id: 29, src: '/assets/grid/rivadera_grid.webp', alt: 'Árbitro con asistentes', featured: false },
-  { id: 30, src: '/assets/grid/altamirano_grid.webp', alt: 'Árbitro saca tarjeta roja', featured: false },
-  { id: 31, src: '/assets/grid/veldez_grid.webp', alt: 'Árbitro tira moneda al aire', featured: false },
+  { id: 29, src: '/assets/grid/rivadera_grid.webp', alt: 'Árbitro sonriendo', featured: false },
+  { id: 30, src: '/assets/grid/altamirano_grid.webp', alt: 'Árbitro saque inicial', featured: false },
+  { id: 31, src: '/assets/grid/valdez_grid.webp', alt: 'Árbitro corriendo', featured: false },
+  { id: 32, src: '/assets/grid/coltrito_grid.webp', alt: 'Árbitro cobra falta', featured: false },
+
   // ... AQUÍ PUEDES AGREGAR TODAS LAS FOTOS QUE QUIERAS ...
 ];
 
