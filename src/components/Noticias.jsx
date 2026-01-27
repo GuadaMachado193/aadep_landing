@@ -16,7 +16,7 @@ const listaFotos = [
   { id: 10, src: '/assets/grid/aadc_grid.webp', alt: 'Árbitros entrando en calor', featured: false },
   { id: 11, src: '/assets/grid/alba_grid.webp', alt: 'Árbitro Mujer', featured: false },
   { id: 12, src: '/assets/grid/albert_grid.webp', alt: 'Reunión de árbitros', featured: false },
-  { id: 13, src: '/assets/grid/altamirano_grid.webp', alt: 'Árbitro en partido de inferiores', featured: false },
+  { id: 13, src: '/assets/grid/leiria.webp', alt: 'Árbitro en partido de inferiores', featured: false },
   { id: 14, src: '/assets/grid/atorri_grid.webp', alt: 'Árbitro en partido nocturno', featured: false },
   { id: 15, src: '/assets/grid/baldassi_grid.webp', alt: 'Baldassi hijo', featured: false },
   { id: 16, src: '/assets/grid/david_grid.webp', alt: 'Árbitro de noche', featured: false },
@@ -32,6 +32,9 @@ const listaFotos = [
   { id: 26, src: '/assets/grid/vilca_grid.webp', alt: 'Árbitro con asistentes', featured: false },
   { id: 27, src: '/assets/grid/nano_grid.webp', alt: 'Árbitro saca tarjeta roja', featured: false },
   { id: 28, src: '/assets/grid/lipari_grid.webp', alt: 'Árbitro tira moneda al aire', featured: false },
+  { id: 29, src: '/assets/grid/rivadera_grid.webp', alt: 'Árbitro con asistentes', featured: false },
+  { id: 30, src: '/assets/grid/altamirano_grid.webp', alt: 'Árbitro saca tarjeta roja', featured: false },
+  { id: 31, src: '/assets/grid/veldez_grid.webp', alt: 'Árbitro tira moneda al aire', featured: false },
   // ... AQUÍ PUEDES AGREGAR TODAS LAS FOTOS QUE QUIERAS ...
 ];
 
