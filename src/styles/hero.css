@@ -170,3 +170,60 @@
     0%, 100% { transform: rotate(45deg) translate(0, 0); }
     50% { transform: rotate(45deg) translate(2px, 4px); }
 }
+
+/* ==========================================================================
+   Responsive Design para el Hero (Móviles)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 1. Ajuste de la tarjeta de cristal para que no se vea tan opaca/apretada */
+    .hero-glass-panel {
+        /* Reducimos un poco el padding lateral para que el texto respire */
+        padding: 2rem 1rem; 
+        /* Opcional: Hacemos el fondo un pelín más transparente si lo ves muy oscuro */
+        background: rgba(255, 255, 255, 0.05); 
+        backdrop-filter: blur(12px); /* Menos blur ayuda al rendimiento y a la claridad en móviles */
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+
+    /* 3. Ajustes sutiles de tipografía para que no sature la tarjeta pequeña */
+    .hero-title {
+        font-size: clamp(1.8rem, 5vw, 2.2rem); /* Aún más controlado en móviles */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-logo {
+        height: 60px; /* Un poco más chico el logo en celular */
+    }
+
+    /* 4. Que los botones tomen el 100% del ancho para ser más fáciles de tocar */
+    .hero-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes específicos para móviles */
+    .hero-bg {
+        /* 1. Mantenemos 'cover' para que llene la pantalla, pero... */
+        object-fit: cover; 
+        
+        /* 2. ...Cambiamos el enfoque para asegurar que las caras de los árbitros se vean arriba */
+        object-position: center top; /* O prueba 'center 30%' */
+        
+        /* Opcional: Si el efecto parallax (position: fixed) se ve muy forzado o lento en móvil, 
+           puedes intentar desactivarlo solo en celulares: */
+        /* position: absolute; */
+    }
+}

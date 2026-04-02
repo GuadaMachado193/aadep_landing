@@ -46,14 +46,22 @@
     align-items: center;
 }
 
+/* Logo Oculto por defecto en TODAS las pantallas (Escritorio y Móvil) */
 .logo {
     height: 60px;
     width: auto;
-    transition: transform 0.3s ease, height 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px); /* Ligeramente subido para el efecto de entrada */
+    transition: all 0.3s ease; /* Suaviza la altura, opacidad y movimiento */
 }
 
+/* El logo APARECE cuando hacemos scroll */
 .navbar.scrolled .logo {
-    height: 50px;
+    height: 50px; /* Se achica un poco */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Vuelve a su posición original */
 }
 
 /* --- Enlaces de Navegación --- */
