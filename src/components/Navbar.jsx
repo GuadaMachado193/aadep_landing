@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { scrollToHash } from '../hooks/useSmoothScroll';
+import '../styles/navbar.css';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -51,8 +52,8 @@ export default function Navbar() {
             <li><a className={activeId==='home'? 'active':''} href="#home" onClick={onNavClick}>Inicio</a></li>
             <li><a className={activeId==='noticias'? 'active':''} href="#noticias" onClick={onNavClick}>Árbitros</a></li>
             <li><a className={activeId==='nosotros'? 'active':''} href="#nosotros" onClick={onNavClick}>Nosotros</a></li>
-            <li><a className={activeId==='curso'? 'active':''} href="#curso" onClick={onNavClick}>Curso de Árbitros</a></li>
-            <li><a className={activeId==='comision'? 'active':''} href="#comision" onClick={onNavClick}>Comisión Directiva</a></li>
+            <li><a className={activeId==='curso'? 'active':''} href="#curso" onClick={onNavClick}>Curso</a></li>
+            <li><a className={activeId==='comision'? 'active':''} href="#comision" onClick={onNavClick}>Comisión</a></li>
             <li><a className={activeId==='contacto'? 'active':''} href="#contacto" onClick={onNavClick}>Contacto</a></li>
           </ul>
 

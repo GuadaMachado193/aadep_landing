@@ -61,6 +61,7 @@ export default function Sponsors() {
             <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/liga-indep.jpeg'} title="Liga Independiente de Fútbol" subtitle="Fútbol Provincial" />
             <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigadelSur.png'} title="Liga del Sur" subtitle="Fútbol Provincial" />
             <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaVillamariense.png'} title="Liga Villamariense" subtitle="Fútbol Provincial" />
+            <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaGeneralRoca.png'} title="Liga General Roca" subtitle="Fútbol Provincial" />
             <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/torneo-regional.png'} title="Torneo Regional Federal Amateur" subtitle="Fútbol Regional" />
           </div>
 

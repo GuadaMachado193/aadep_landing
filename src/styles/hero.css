@@ -1,0 +1,172 @@
+/* Hero Section - Estilo "Floating Glass Panel" */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end; /* Alineamos el panel hacia abajo */
+    justify-content: center;
+    overflow: hidden;
+    padding-bottom: 7rem;
+}
+
+/* --- Fondo e Imágenes --- */
+.hero-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    will-change: transform;
+}
+
+.hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 85%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center 30%, transparent 20%, rgba(0,0,0,0.5) 100%),
+                linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, transparent 60%);
+    z-index: -2;
+}
+
+/* --- Contenedor de la Tarjeta --- */
+.hero-content-wrapper {
+    width: 100%;
+    max-width: 850px;
+    padding: 0 1.5rem;
+    z-index: 1;
+    animation: fadeUp 1s ease-out forwards;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-glass-panel {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 2.5rem 2rem; /* Reduje un poco el padding superior para compensar el logo */
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* --- NUEVO: Estilos del Logo --- */
+.hero-logo-wrapper {
+    margin-bottom: 1rem; /* Separa el logo del título */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo {
+    height: 80px; /* Ajusta este tamaño dependiendo de las proporciones de tu logo */
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); /* Le da un ligero volumen sobre el cristal */
+}
+
+/* --- Tipografía --- */
+.hero-title {
+    color: #ffffff;
+    font-size: clamp(1.5rem, 2.5vw + 1rem, 2.5rem);
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    line-height: 1.1;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
+    margin: 0 auto 2rem auto;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+/* --- Botones --- */
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.hero-actions .btn {
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.hero-actions .btn-primary {
+    background: #ffffff;
+    color: #0f172a; 
+    border: 2px solid #ffffff;
+}
+
+.hero-actions .btn-primary:hover {
+    background: #e2e8f0;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(255, 255, 255, 0.3);
+}
+
+.hero-actions .btn-outline-light {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.hero-actions .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.hero-trust {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 1rem;
+}
+
+/* --- Flecha Scroll --- */
+.scroll-cue {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding: 1rem;
+}
+
+.chevron {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid rgba(255,255,255,0.7);
+    border-bottom: 2px solid rgba(255,255,255,0.7);
+    transform: rotate(45deg);
+    animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: rotate(45deg) translate(0, 0); }
+    50% { transform: rotate(45deg) translate(2px, 4px); }
+}

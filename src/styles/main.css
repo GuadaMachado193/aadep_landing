@@ -127,8 +127,8 @@ body {
 }
 
 /* Header y Navegación */
-.navbar {
-    /* Degradado para integrarse con el hero */
+/* .navbar {
+    /* Degradado para integrarse con el hero 
     background: linear-gradient(to bottom, rgba(11, 31, 58, 0.65), rgba(255,255,255,0.75));
     backdrop-filter: blur(8px);
     box-shadow: var(--shadow);
@@ -155,7 +155,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* reducir altura de la barra: menos padding vertical */
+    /* reducir altura de la barra: menos padding vertical 
     padding: 0.7rem 0.6rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -167,14 +167,14 @@ body {
 }
 
 .logo {
-    height: 50px; /* logo un poco más pequeño */
+    height: 50px; /* logo un poco más pequeño 
     width: auto;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    /* menos separación entre enlaces para compactar la nav */
+    /* menos separación entre enlaces para compactar la nav 
     gap: 1.25rem;
     align-items: center;
 }
@@ -217,7 +217,7 @@ body {
     display: flex;
     align-items: center;
 
-    /* reducir espacio entre acciones (logo / links / botones) */
+    /* reducir espacio entre acciones (logo / links / botones) 
     gap: 3.5rem;
 }
 
@@ -225,7 +225,7 @@ body {
     background: var(--primary-color);
     border: none;
     color: var(--white);
-    /* más compacto */
+    /* más compacto 
     padding: 0.5rem 1.25rem;
     border-radius: calc(var(--border-radius) - 4px);
     font-weight: 500;
@@ -254,9 +254,9 @@ body {
     background: var(--text-dark);
     margin: 2px 0;
     transition: var(--transition);
-}
+} */
 
-/* Hero Section */
+/* Hero Section
 .hero {
     position: relative;
     height: 100vh;
@@ -272,7 +272,7 @@ body {
 .hero-image {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 50;
     width: 100%;
     height: 100%;
     z-index: -3;
@@ -285,7 +285,7 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center -15%; /* mostrar más la parte baja (moneda) */
-}
+/* 
 
 .hero-overlay {
     position: absolute;
@@ -334,6 +334,7 @@ body {
     padding: 0.4rem 1.2rem;
     border-radius: 999px;
     /* Texto en color oscuro para mayor contraste sobre el fondo claro del badge */
+    /*
     color: var(--text-dark);
     font-size: 0.85rem;
     font-weight: 600;
@@ -348,7 +349,7 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2;
-    /* Sombra sutil para mejorar legibilidad sobre imagen */
+    /* Sombra sutil para mejorar legibilidad sobre imagen 
     text-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
 
@@ -362,7 +363,7 @@ body {
 
 .hero-actions {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -375,7 +376,7 @@ body {
 }
 .hero-actions .btn.btn-outline-light {
     border-width: 2px;
-}
+} */
 
 /* Secciones generales */
 section {
@@ -542,36 +543,6 @@ section[id] {
   }
 }
 
-
-/* Carousel
-.carousel-control-prev,
-.carousel-control-next {
-    width: 50px;
-    height: 50px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.carousel-control-prev {
-    left: -25px;
-}
-
-.carousel-control-next {
-    right: -25px;
-}
-
-.carousel-indicators {
-    bottom: -50px;
-}
-
-.carousel-indicators button {
-    background: var(--primary-color);
-    border-radius: 50%;
-    width: 12px;
-    height: 12px;
-} */
 
 /* Curso de Árbitros */
 .curso-arbitros {

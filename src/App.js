@@ -10,6 +10,7 @@ import Comision from './components/Comision';
 import Afiliacion from './components/Afiliacion';
 import Contacto from './components/Contacto';
 import BotonWhatsapp from './components/BotonWhatsapp';
+import PreparacionFisica from './components/PreparacionFisica';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Sponsors />
         <Noticias />
         <Nosotros />
+        <PreparacionFisica/>
         <Curso />
         <Comision />
         <Afiliacion />
