@@ -44,10 +44,10 @@ export default function Noticias() {
   const scrollRef = useRef(null);
   const [mostrarGaleria, setMostrarGaleria] = useState(false); // Estado para abrir/cerrar
 
-  const scroll = (direction) => {
+const scroll = (direction) => {
     const { current } = scrollRef;
     if (current) {
-      const { scrollLeft, scrollWidth, clientWidth } = current;
+      // ✅ Línea eliminada. Ya no dará error.
       const scrollAmount = 300;
       if (direction === 'left') {
         current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
