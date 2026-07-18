@@ -25,7 +25,7 @@ export default function PreparacionFisica() {
             <h3>Exigencia al Máximo Nivel</h3>
             <p>
               Estamos comprometidos con la exigencia en el campo de juego. 
-              Por eso, en la AADC contamos con un <strong>Licenciado especializado en Alto Rendimiento</strong> que diagrama y supervisa la evolución de cada colegiado.
+              Por eso, en AADEP contamos con un <strong>Licenciado especializado en Alto Rendimiento</strong> que diagrama y supervisa la evolución de cada colegiado.
             </p>
             
             <ul className="preparacion-list">
@@ -50,14 +50,12 @@ export default function PreparacionFisica() {
             className={`preparacion-image-wrapper ${imgReveal.visible ? 'fade-in-up' : ''}`}
           >
             <div className="preparacion-image">
-              {/* IMPORTANTE: Reemplaza "profesor_fisico.jpg" con la foto real de tu profe */}
-              <img 
-                src={`${process.env.PUBLIC_URL}/assets/grid/facu_valdez.webp`} 
-                alt="Profesor de Preparación Física AADC" 
+              <img
+                src={`${process.env.PUBLIC_URL}/assets/grid/facu_valdez.webp`}
+                alt="Profesor de Preparación Física AADEP"
                 loading="lazy"
               />
-              
-              {/* Tarjeta flotante sobre la imagen */}
+
               <div className="profesor-badge">
                 <span className="badge-title">Prof. a cargo</span>
                 <span className="badge-name">Facundo Valdez</span>

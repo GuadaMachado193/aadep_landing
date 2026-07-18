@@ -97,8 +97,26 @@
 }
 
 .tab-content {
+    background-color: #fff;
     padding: 2.5rem;
     min-height: 200px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.visible {
+    display: block;
+}
+
+.valores-list {
+    list-style: none;
+    padding: 0;
+}
+
+.valores-list li:last-child {
+    border-bottom: none;
 }
 
 /* IMPORTANTE: Colores definidos para que se vea el texto */

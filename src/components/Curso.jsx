@@ -53,11 +53,6 @@ export default function Curso() {
             <div className="curso-image">
               <img loading="lazy" src={process.env.PUBLIC_URL + '/assets/valor_mision.jpg'} alt="Árbitros AADEP Córdoba" />
             </div>
-            {/* <div className="curso-inscripcion">
-              <h4>¿Listo para comenzar?</h4>
-              <p>Inscríbete ahora y forma parte de la próxima generación de árbitros profesionales</p>
-              <button className="btn btn-primary btn-lg">Inscríbete Ahora</button>
-            </div> */}
           </div>
         </div>
       </div>

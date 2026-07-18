@@ -1,85 +1,3 @@
-
-.miembro-image img.tesorero {
-    object-position: center top;
-}
-.miembro-image img {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 15%;
-    transition: transform .45s ease, filter .25s ease, opacity .35s ease;
-    opacity: 1;
-    display: block;
-    background-color: var(--light-gray);
-    opacity: 1 !important;
-}
-img, svg {
-    vertical-align: middle;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-*, ::after, ::before {
-    box-sizing: border-box;
-}
-user agent stylesheet
-img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-}
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    width: 100%;
-    padding-right: calc(var(--bs-gutter-x) * .5);
-    padding-left: calc(var(--bs-gutter-x) * .5);
-    margin-right: auto;
-    margin-left: auto;
-}
-body {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--text-dark);
-    line-height: 1.6;
-    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
-}
-body {
-    margin: 0;
-    font-family: var(--bs-body-font-family);
-    font-size: var(--bs-body-font-size);
-    font-weight: var(--bs-body-font-weight);
-    line-height: var(--bs-body-line-height);
-    color: var(--bs-body-color);
-    text-align: var(--bs-body-text-align);
-    background-color: var(--bs-body-bg);
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
-}
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-:root {
-    --primary-color: #0b1f3a;
-    --secondary-color: #0ea5e9;
-    --accent-color: #22c55e;
-    --text-dark: #0f172a;
-    --text-light: #64748b;
-    --white: #ffffff;
-    --light-gray: #f8fafc;
-    --border-color: #e2e8f0;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 16px 30px -12px rgba(2, 6, 23, 0.25);
-    --border-radius: 12px;
-    --transition: all 0.25s ease;
-}
-
-
 /* Reset y variables CSS */
 :root {
     /* Paleta inspirada en refereepro (azules profundos + acentos limpios) */
@@ -104,20 +22,17 @@ body {
 }
 
 body {
+    margin: 0;
     font-family: 'Montserrat', sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
-    /* Fondo animado (degradado/traslado de color) */
-   
-        background: linear-gradient(120deg, #ff9a9e, #fad0c4);
-    
-      
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
 }
 
-@keyframes fondo {
-  0%   { background-color: #ff9a9e; }
-  50%  { background-color: #fad0c4; }
-  100% { background-color: #a1c4fd; }
+img, svg {
+    vertical-align: middle;
 }
 
 .container {
@@ -529,6 +444,44 @@ section[id] {
 
 .scroll-btn.right {
   right: -10px; /* Posición a la derecha */
+}
+
+.carousel-wrapper {
+  position: relative;
+}
+
+/* Aviso de éxito/error del formulario de contacto */
+.form-notice {
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.form-notice.success {
+  background: #10b981;
+}
+
+.form-notice.error {
+  background: #ef4444;
+}
+
+/* Oculta visualmente pero accesible para lectores de pantalla */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.galeria-cta {
+  text-align: center;
+  margin-top: 30px;
 }
 
 /* MOSTRAR SOLO EN MÓVIL */

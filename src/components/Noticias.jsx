@@ -1,12 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import useReveal from '../hooks/useReveal';
 import '../styles/noticia.css';
 
-// 1. ORGANIZAMOS LAS FOTOS AQUÍ PARA NO REPETIR CÓDIGO
 const listaFotos = [
   { id: 1, src: '/assets/seccion-arbitros.webp', alt: 'Árbitros AADEP', featured: true },
-  { id: 2, src: '/assets/lipari-grid.jpg', alt: 'Árbitro bajo la lluvia', featured: false },
-  { id: 3, src: '/assets/guadap.jpg', alt: 'Árbitro cobrando fuera de juego', featured: false },
+  { id: 2, src: '/assets/lipari-grid.webp', alt: 'Árbitro bajo la lluvia', featured: false },
+  { id: 3, src: '/assets/guadap.webp', alt: 'Árbitro cobrando fuera de juego', featured: false },
   { id: 4, src: '/assets/alejo3.jpg', alt: 'Referee de negro', featured: false },
   { id: 5, src: '/assets/imagen-grid3.jpg', alt: 'Partido Liga Cordobesa', featured: false },
   { id: 6, src: '/assets/grid/pablo_billy.webp', alt: 'Terna Arbitral', featured: false },
@@ -36,26 +35,44 @@ const listaFotos = [
   { id: 30, src: '/assets/grid/altamirano_grid.webp', alt: 'Árbitro saque inicial', featured: false },
   { id: 31, src: '/assets/grid/valdez_grid.webp', alt: 'Árbitro corriendo', featured: false },
   { id: 32, src: '/assets/grid/coltrito_grid.webp', alt: 'Árbitro cobra falta', featured: false },
-
-  // ... AQUÍ PUEDES AGREGAR TODAS LAS FOTOS QUE QUIERAS ...
 ];
+
+// Scroll horizontal con loop: al llegar a un extremo vuelve al otro
+export function scrollConLoop(el, direction, scrollAmount = 300) {
+  if (!el) return;
+  const { scrollLeft, scrollWidth, clientWidth } = el;
+  if (direction === 'left') {
+    if (scrollLeft <= 5) {
+      el.scrollTo({ left: scrollWidth, behavior: 'smooth' });
+    } else {
+      el.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    }
+  } else {
+    if (scrollLeft + clientWidth >= scrollWidth - 5) {
+      el.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      el.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }
+}
 
 export default function Noticias() {
   const scrollRef = useRef(null);
-  const [mostrarGaleria, setMostrarGaleria] = useState(false); // Estado para abrir/cerrar
+  const [mostrarGaleria, setMostrarGaleria] = useState(false);
 
-const scroll = (direction) => {
-    const { current } = scrollRef;
-    if (current) {
-      // ✅ Línea eliminada. Ya no dará error.
-      const scrollAmount = 300;
-      if (direction === 'left') {
-        current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      } else {
-        current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      }
-    }
-  };
+  // Con la galería abierta: cerrar con Escape y bloquear el scroll del fondo
+  useEffect(() => {
+    if (!mostrarGaleria) return;
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setMostrarGaleria(false);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [mostrarGaleria]);
 
   return (
     <section className="noticias-destacadas" id="noticias">
@@ -65,39 +82,57 @@ const scroll = (direction) => {
           <p>Conoce a algunos de los profesionales que forman parte de nuestra asociación</p>
         </div>
 
-        {/* --- CARRUSEL (Muestra solo las primeras 8 fotos o las que quieras) --- */}
-        <div className="carousel-wrapper" style={{ position: 'relative' }}>
-          <button className="scroll-btn left" onClick={() => scroll('left')}>&#10094;</button>
-          
+        <div className="carousel-wrapper">
+          <button
+            className="scroll-btn left"
+            aria-label="Ver fotos anteriores"
+            onClick={() => scrollConLoop(scrollRef.current, 'left')}
+          >
+            &#10094;
+          </button>
+
           <div className="noticias-grid" ref={scrollRef}>
             {listaFotos.slice(0, 8).map((foto) => (
-              <NoticiaCard 
-                key={foto.id} 
-                featured={foto.featured} 
-                src={process.env.PUBLIC_URL + foto.src} 
-                alt={foto.alt} 
+              <NoticiaCard
+                key={foto.id}
+                featured={foto.featured}
+                src={process.env.PUBLIC_URL + foto.src}
+                alt={foto.alt}
               />
             ))}
           </div>
 
-          <button className="scroll-btn right" onClick={() => scroll('right')}>&#10095;</button>
+          <button
+            className="scroll-btn right"
+            aria-label="Ver fotos siguientes"
+            onClick={() => scrollConLoop(scrollRef.current, 'right')}
+          >
+            &#10095;
+          </button>
         </div>
 
-        {/* BOTÓN PARA ABRIR LA GALERÍA COMPLETA */}
-        <div style={{ textAlign: 'center', marginTop: '30px' }}>
-          <button 
-            className="btn btn-primary" 
-            onClick={() => setMostrarGaleria(true)}
-          >
+        <div className="galeria-cta">
+          <button className="btn btn-primary" onClick={() => setMostrarGaleria(true)}>
             Ver Galería Completa 📸
           </button>
         </div>
 
-        {/* --- MODAL / GALERÍA FLOTANTE --- */}
         {mostrarGaleria && (
-          <div className="galeria-modal" onClick={() => setMostrarGaleria(false)}>
+          <div
+            className="galeria-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Galería de fotos"
+            onClick={() => setMostrarGaleria(false)}
+          >
             <div className="galeria-contenido" onClick={(e) => e.stopPropagation()}>
-              <button className="cerrar-btn" onClick={() => setMostrarGaleria(false)}>×</button>
+              <button
+                className="cerrar-btn"
+                aria-label="Cerrar galería"
+                onClick={() => setMostrarGaleria(false)}
+              >
+                ×
+              </button>
               <h3>Galería de Fotos</h3>
               <div className="galeria-grid-completa">
                 {listaFotos.map((foto) => (
@@ -109,7 +144,6 @@ const scroll = (direction) => {
             </div>
           </div>
         )}
-
       </div>
     </section>
   );

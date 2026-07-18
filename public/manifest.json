@@ -3,12 +3,12 @@
   "name": "AADEP Córdoba",
   "icons": [
     {
-      "src": "/assets/ligas/aadep-logo.png",
+      "src": "/assets/aadep-logo.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/assets/ligas/aadep-logo.png",
+      "src": "/assets/aadep-logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }

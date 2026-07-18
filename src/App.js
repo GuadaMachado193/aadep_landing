@@ -26,7 +26,6 @@ function App() {
         <Comision />
         <Afiliacion />
         <Contacto />
-        {/* Próximas secciones: Sponsors, Noticias, Nosotros, Curso, Comisión, Afiliación, Contacto */}
       </main>
       <Footer />
       <BotonWhatsapp/>

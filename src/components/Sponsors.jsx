@@ -1,40 +1,23 @@
-import React, { useRef } from 'react'; // <--- 1. Importante: agregar useRef
+import React, { useRef } from 'react';
 import useReveal from '../hooks/useReveal';
+import { scrollConLoop } from './Noticias';
+
+const publicUrl = process.env.PUBLIC_URL || '';
+
+const ligas = [
+  { id: 1, src: '/assets/ligas/LigaBeccarVarela.png', title: 'Liga Beccar Varela', subtitle: 'Fútbol Provincial' },
+  { id: 2, src: '/assets/ligas/LigaBellvillense.png', title: 'Liga Bellvillense', subtitle: 'Fútbol Provincial' },
+  { id: 3, src: '/assets/ligas/LigaColon.png', title: 'Liga Colón', subtitle: 'Fútbol Provincial' },
+  { id: 4, src: '/assets/ligas/LigaCordobesa.png', title: 'Liga Cordobesa', subtitle: 'Fútbol Provincial' },
+  { id: 5, src: '/assets/ligas/liga-indep.jpeg', title: 'Liga Independiente de Fútbol', subtitle: 'Fútbol Provincial' },
+  { id: 6, src: '/assets/ligas/LigadelSur.png', title: 'Liga del Sur', subtitle: 'Fútbol Provincial' },
+  { id: 7, src: '/assets/ligas/LigaVillamariense.png', title: 'Liga Villamariense', subtitle: 'Fútbol Provincial' },
+  { id: 8, src: '/assets/ligas/LigaGeneralRoca.png', title: 'Liga General Roca', subtitle: 'Fútbol Provincial' },
+  { id: 9, src: '/assets/ligas/torneo-regional.png', title: 'Torneo Regional Federal Amateur', subtitle: 'Fútbol Regional' },
+];
 
 export default function Sponsors() {
-  const scrollRef = useRef(null); // <--- 2. Creamos la referencia
-
-  // Función para mover el scroll
-  // Función para mover el scroll con Bucle (Loop)
-  const scroll = (direction) => {
-    const { current } = scrollRef;
-    
-    if (current) {
-      const { scrollLeft, scrollWidth, clientWidth } = current;
-      const scrollAmount = 300; // Lo que mueve cada clic (ancho de tarjeta aprox)
-      
-      if (direction === 'left') {
-        // Lógica Izquierda: ¿Estamos al principio?
-        if (scrollLeft === 0) {
-          // Si sí, ir al FINAL
-          current.scrollTo({ left: scrollWidth, behavior: 'smooth' });
-        } else {
-          // Si no, mover a la izquierda normal
-          current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        }
-      } else {
-        // Lógica Derecha: ¿Llegamos al final?
-        // (Usamos un margen de 5px por si los decimales fallan)
-        if (scrollLeft + clientWidth >= scrollWidth - 5) {
-          // Si sí, volver al PRINCIPIO
-          current.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          // Si no, mover a la derecha normal
-          current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        }
-      }
-    }
-  };
+  const scrollRef = useRef(null);
 
   return (
     <section className="sponsors" id="liga">
@@ -44,43 +27,43 @@ export default function Sponsors() {
           <p>Organizaciones deportivas que confían en nuestros árbitros</p>
         </div>
 
-        {/* 3. Contenedor relativo para posicionar las flechas */}
-        <div className="carousel-wrapper" style={{ position: 'relative' }}>
-          
-          {/* Botón Izquierda */}
-          <button className="scroll-btn left" onClick={() => scroll('left')}>
-            &#10094; {/* Código HTML para flecha izquierda */}
+        <div className="carousel-wrapper">
+          <button
+            className="scroll-btn left"
+            aria-label="Ver ligas anteriores"
+            onClick={() => scrollConLoop(scrollRef.current, 'left')}
+          >
+            &#10094;
           </button>
 
-          {/* Tu lista de siempre, agregando la prop ref={scrollRef} */}
           <div className="ligas-grid" ref={scrollRef}>
-            <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaBeccarVarela.png'} title="Liga Beccar Varela" subtitle="Fútbol Provincial" />
-            <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaBellvillense.png'} title="Liga Bellvillense" subtitle="Fútbol Provincial" />
-            <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaColon.png'} title="Liga Colón" subtitle="Fútbol Provincial" />
-            <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaCordobesa.png'} title="Liga Cordobesa" subtitle="Fútbol Provincial" />
-            <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/liga-indep.jpeg'} title="Liga Independiente de Fútbol" subtitle="Fútbol Provincial" />
-            <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigadelSur.png'} title="Liga del Sur" subtitle="Fútbol Provincial" />
-            <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaVillamariense.png'} title="Liga Villamariense" subtitle="Fútbol Provincial" />
-            <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/LigaGeneralRoca.png'} title="Liga General Roca" subtitle="Fútbol Provincial" />
-            <SponsorCard src={process.env.PUBLIC_URL + '/assets/ligas/torneo-regional.png'} title="Torneo Regional Federal Amateur" subtitle="Fútbol Regional" />
+            {ligas.map((liga) => (
+              <SponsorCard
+                key={liga.id}
+                src={publicUrl + liga.src}
+                title={liga.title}
+                subtitle={liga.subtitle}
+              />
+            ))}
           </div>
 
-          {/* Botón Derecha */}
-          <button className="scroll-btn right" onClick={() => scroll('right')}>
-            &#10095; {/* Código HTML para flecha derecha */}
+          <button
+            className="scroll-btn right"
+            aria-label="Ver ligas siguientes"
+            onClick={() => scrollConLoop(scrollRef.current, 'right')}
+          >
+            &#10095;
           </button>
         </div>
-
       </div>
     </section>
   );
 }
 
-// ... El componente SponsorCard queda igual ...
 function SponsorCard({ src, title, subtitle }) {
   const { ref, visible } = useReveal();
   return (
-    <div ref={ref} className={"sponsor-item" + (visible ? ' fade-in-up' : '')}>
+    <div ref={ref} className={'sponsor-item' + (visible ? ' fade-in-up' : '')}>
       <img loading="lazy" src={src} alt={title} />
       <div className="sponsor-info">
         <h4>{title}</h4>

@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-info">
-            <h3>AADC</h3>
+            <h3>AADEP</h3>
             <p>Estados Unidos 2840 <br/>Córdoba, Argentina</p>
             <p><strong>Teléfono:</strong> +54 351-5728947</p>
             <p><strong>Teléfono:</strong> +54 351-3905917</p>
