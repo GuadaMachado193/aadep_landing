@@ -1,24 +1,10 @@
 import React, { useState } from 'react';
-import { Activity, Award, BookOpen, Briefcase, CircleCheck, Target, Users } from 'lucide-react';
+import { CircleCheck } from 'lucide-react';
 import useReveal from '../hooks/useReveal';
 import Foto from './Foto';
+import { curso } from '../data/curso';
 
-const beneficios = [
-  { Icono: BookOpen, texto: 'Formación teórica completa en reglas de juego' },
-  { Icono: Activity, texto: 'Entrenamiento físico y técnico especializado' },
-  { Icono: Target, texto: 'Práctica en partidos reales de diferentes categorías' },
-  { Icono: Users, texto: 'Networking con árbitros experimentados' },
-  { Icono: Award, texto: 'Certificación oficial reconocida por la AFA' },
-  { Icono: Briefcase, texto: 'Oportunidades laborales en ligas cordobesas' },
-];
-
-const requisitos = [
-  'Edad mínima: 16 años',
-  'Educación secundaria en curso o completa',
-  'Buena condición física',
-  'Disponibilidad para entrenamientos',
-  'Compromiso con la ética deportiva',
-];
+const { beneficios, requisitos } = curso;
 
 export default function Curso() {
   const [showBeneficios, setShowBeneficios] = useState(false);
@@ -67,6 +53,10 @@ export default function Curso() {
                 ))}
               </ul>
             </div>
+
+            <a href="/curso/" className="btn btn-primary curso-ver-mas">
+              Ver toda la información del curso
+            </a>
           </div>
 
           <div ref={ctaReveal.ref} className={"curso-cta" + (ctaReveal.visible ? ' fade-in-up' : '')}>

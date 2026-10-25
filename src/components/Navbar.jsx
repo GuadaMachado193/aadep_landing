@@ -15,10 +15,18 @@ const enlaces = [
   { id: 'contacto', label: 'Contacto' },
 ];
 
-export default function Navbar() {
+// pagina="curso": se usa fuera de la landing. Los enlaces vuelven a la landing (/#seccion)
+// y "Curso" queda marcado como activo.
+export default function Navbar({ pagina }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeId, setActiveId] = useState('home');
+  const [activeId, setActiveId] = useState(pagina || 'home');
+  const enLanding = !pagina;
+  const hrefDe = (id) => {
+    if (enLanding) return `#${id}`;
+    if (id === 'curso') return '/curso/';
+    return id === 'home' ? '/' : `/#${id}`;
+  };
 
   // Sombra/fondo del navbar al hacer scroll (con requestAnimationFrame como throttle)
   useEffect(() => {
@@ -38,6 +46,7 @@ export default function Navbar() {
 
   // ScrollSpy con IntersectionObserver (sin cálculos en cada evento de scroll)
   useEffect(() => {
+    if (!enLanding) return;
     const sections = Array.from(document.querySelectorAll('section[id]'));
     if (!sections.length) return;
 
@@ -53,7 +62,7 @@ export default function Navbar() {
 
     sections.forEach((sec) => observer.observe(sec));
     return () => observer.disconnect();
-  }, []);
+  }, [enLanding]);
 
   const closeMenu = () => setOpen(false);
   const onNavClick = (e) => {
@@ -70,7 +79,7 @@ export default function Navbar() {
       <nav className={'navbar' + (scrolled ? ' scrolled' : '')}>
         <div className="nav-container">
           <div className="logo-container">
-            <a href="#home" onClick={onNavClick} aria-label="Ir al inicio">
+            <a href={hrefDe('home')} onClick={onNavClick} aria-label="Ir al inicio">
               <img
                 src={PUBLIC_URL + '/assets/aadep-logo-160.webp'}
                 width="117"
@@ -86,7 +95,7 @@ export default function Navbar() {
               <li key={id}>
                 <a
                   className={activeId === id ? 'active' : ''}
-                  href={`#${id}`}
+                  href={hrefDe(id)}
                   onClick={onNavClick}
                 >
                   {label}

@@ -1,0 +1,294 @@
+/* ==========================================================================
+   Página /curso/
+   ========================================================================== */
+
+/* --- Hero --- */
+.curso-hero {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 9rem 0 5rem; /* deja lugar al navbar fijo */
+}
+
+.curso-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 4rem;
+    align-items: center;
+}
+
+.curso-eyebrow {
+    color: var(--crest-yellow);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.curso-hero-titulo {
+    font-size: clamp(2rem, 3vw + 1rem, 3.25rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.curso-hero-bajada {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.2rem;
+    max-width: 560px;
+    margin-bottom: 1.5rem;
+}
+
+.curso-fecha {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    padding: 0.6rem 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.curso-fecha svg {
+    color: var(--crest-yellow);
+}
+
+/* Los botones reutilizan las pastillas del hero de la landing (hero.css) */
+.curso-hero .hero-actions,
+.curso-cta-final .hero-actions {
+    justify-content: flex-start;
+    margin-bottom: 0;
+}
+
+.curso-hero-foto img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+}
+
+/* --- Datos clave --- */
+.curso-datos {
+    background: var(--light-gray);
+    padding: 4rem 0;
+}
+
+.curso-datos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 0;
+}
+
+.curso-dato {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+}
+
+.curso-dato svg {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.curso-dato dt {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.curso-dato dd {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.curso-dato dd.pendiente {
+    color: var(--text-light);
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* --- Sobre el curso --- */
+.curso-sobre {
+    background: var(--white);
+}
+
+.curso-sobre-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 4rem;
+    align-items: start;
+}
+
+.curso-sobre h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.curso-sobre h3 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.curso-texto {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.curso-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.curso-lista li {
+    padding: 0.5rem 0;
+}
+
+.curso-requisitos-card {
+    background: var(--light-gray);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+}
+
+/* --- Programa --- */
+.curso-programa {
+    background: var(--light-gray);
+}
+
+.curso-programa-lista {
+    list-style: none;
+    counter-reset: modulo;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.curso-programa-lista li {
+    counter-increment: modulo;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+}
+
+.curso-programa-lista li::before {
+    content: counter(modulo, decimal-leading-zero);
+    display: block;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 800;
+    border-bottom: 4px solid var(--crest-yellow);
+    width: fit-content;
+    margin-bottom: 0.75rem;
+}
+
+.curso-programa-lista strong {
+    display: block;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.curso-programa-lista p {
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* --- Preguntas frecuentes --- */
+.curso-preguntas {
+    background: var(--white);
+}
+
+.curso-preguntas-lista {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.curso-preguntas details {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 0;
+}
+
+.curso-preguntas summary {
+    cursor: pointer;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.curso-preguntas details p {
+    color: var(--text-light);
+    margin: 0.75rem 0 0;
+}
+
+/* --- Llamado final --- */
+.curso-cta-final {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 5rem 0;
+}
+
+.curso-cta-final h2 {
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.curso-cta-final h2::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--crest-yellow);
+    margin-top: 0.75rem;
+}
+
+.curso-cta-final p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .curso-hero-grid,
+    .curso-sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .curso-hero-foto img {
+        height: 280px;
+    }
+
+    .curso-datos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .curso-hero {
+        padding-top: 7.5rem;
+    }
+
+    .curso-datos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .curso-requisitos-card {
+        padding: 1.5rem;
+    }
+}

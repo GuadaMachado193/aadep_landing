@@ -350,6 +350,11 @@ section[id] {
     border-radius: var(--border-radius);
 }
 
+/* Enlace a la página /curso/ */
+.curso-ver-mas {
+    margin-top: 1.5rem;
+}
+
 .curso-requisitos h4 {
     color: var(--primary-color);
     margin-bottom: 1rem;
