@@ -1,4 +1,4 @@
-import { afterEach, expect, test } from 'vitest';
+import { afterAll, beforeEach, expect, test } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
 import Novedades from './Novedades';
 import Navbar from './Navbar';
@@ -13,8 +13,13 @@ const prueba = [
   { id: 'otra', fecha: '2026-03-15', titulo: 'Novedad otra', resumen: 'Resumen otro.' },
 ];
 
-afterEach(() => {
+// Cada test arranca sin novedades y carga las suyas; al final se restauran las reales
+const reales = [...novedades];
+beforeEach(() => {
   novedades.length = 0;
+});
+afterAll(() => {
+  novedades.splice(0, novedades.length, ...reales);
 });
 
 test('sin novedades no hay sección ni enlace, y la página muestra el mensaje', () => {
