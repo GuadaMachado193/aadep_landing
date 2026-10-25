@@ -1,6 +1,24 @@
 import React, { useState } from 'react';
+import { Activity, Award, BookOpen, Briefcase, CircleCheck, Target, Users } from 'lucide-react';
 import useReveal from '../hooks/useReveal';
 import { PUBLIC_URL } from '../publicUrl';
+
+const beneficios = [
+  { Icono: BookOpen, texto: 'Formación teórica completa en reglas de juego' },
+  { Icono: Activity, texto: 'Entrenamiento físico y técnico especializado' },
+  { Icono: Target, texto: 'Práctica en partidos reales de diferentes categorías' },
+  { Icono: Users, texto: 'Networking con árbitros experimentados' },
+  { Icono: Award, texto: 'Certificación oficial reconocida por la AFA' },
+  { Icono: Briefcase, texto: 'Oportunidades laborales en ligas cordobesas' },
+];
+
+const requisitos = [
+  'Edad mínima: 16 años',
+  'Educación secundaria en curso o completa',
+  'Buena condición física',
+  'Disponibilidad para entrenamientos',
+  'Compromiso con la ética deportiva',
+];
 
 export default function Curso() {
   const [showBeneficios, setShowBeneficios] = useState(false);
@@ -26,13 +44,13 @@ export default function Curso() {
                 </button>
                 <div id="beneficiosDetails" className={"beneficios-content" + (showBeneficios ? ' active' : '')}>
                   <h4>Beneficios del curso:</h4>
-                  <ul>
-                    <li>📚 Formación teórica completa en reglas de juego</li>
-                    <li>🏃‍♂️ Entrenamiento físico y técnico especializado</li>
-                    <li>🎯 Práctica en partidos reales de diferentes categorías</li>
-                    <li>👥 Networking con árbitros experimentados</li>
-                    <li>📋 Certificación oficial reconocida por la AFA</li>
-                    <li>💼 Oportunidades laborales en ligas cordobesas</li>
+                  <ul className="icon-list">
+                    {beneficios.map(({ Icono, texto }) => (
+                      <li key={texto}>
+                        <Icono size={20} strokeWidth={2} aria-hidden="true" />
+                        {texto}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -40,12 +58,13 @@ export default function Curso() {
 
             <div className="curso-requisitos">
               <h4>Requisitos para inscribirse:</h4>
-              <ul>
-                <li>✅ Edad mínima: 16 años</li>
-                <li>✅ Educación secundaria en curso o completa</li>
-                <li>✅ Buena condición física</li>
-                <li>✅ Disponibilidad para entrenamientos</li>
-                <li>✅ Compromiso con la ética deportiva</li>
+              <ul className="icon-list">
+                {requisitos.map((texto) => (
+                  <li key={texto}>
+                    <CircleCheck size={20} strokeWidth={2} aria-hidden="true" />
+                    {texto}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

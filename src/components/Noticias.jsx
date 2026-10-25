@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Camera } from 'lucide-react';
 import useReveal from '../hooks/useReveal';
 import '../styles/noticia.css';
 import { PUBLIC_URL } from '../publicUrl';
@@ -114,7 +115,7 @@ export default function Noticias() {
 
         <div className="galeria-cta">
           <button className="btn btn-primary" onClick={() => setMostrarGaleria(true)}>
-            Ver Galería Completa 📸
+            Ver Galería Completa <Camera size={20} strokeWidth={2} aria-hidden="true" />
           </button>
         </div>
 

@@ -221,9 +221,10 @@
         
         /* 2. ...Cambiamos el enfoque para asegurar que las caras de los árbitros se vean arriba */
         object-position: center top; /* O prueba 'center 30%' */
-        
-        /* Opcional: Si el efecto parallax (position: fixed) se ve muy forzado o lento en móvil, 
-           puedes intentar desactivarlo solo en celulares: */
-        /* position: absolute; */
+    }
+
+    /* Sin parallax en celulares: position: fixed se traba al hacer scroll (sobre todo en iPhone) */
+    .hero-image {
+        position: absolute;
     }
 }

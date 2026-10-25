@@ -72,7 +72,9 @@ export default function Navbar() {
           <div className="logo-container">
             <a href="#home" onClick={onNavClick} aria-label="Ir al inicio">
               <img
-                src={PUBLIC_URL + '/assets/aadep-logo.png'}
+                src={PUBLIC_URL + '/assets/aadep-logo-160.webp'}
+                width="117"
+                height="160"
                 alt="Logo AADEP"
                 className="logo"
               />

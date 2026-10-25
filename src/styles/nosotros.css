@@ -43,7 +43,7 @@
 .read-more-btn {
     background: none;
     border: none;
-    color: #007bff;
+    color: var(--primary-color, #0b1f3a);
     cursor: pointer;
     font-weight: 600;
     margin: 1.5rem auto 0 auto;
