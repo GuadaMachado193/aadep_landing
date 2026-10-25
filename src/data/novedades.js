@@ -1,3 +1,5 @@
+import { novedadesDemo } from './novedades-demo';
+
 // Novedades de AADEP: designaciones, cursos, resultados, actividades.
 // Las usan la sección Novedades de la landing (las 3 más recientes) y la página /novedades/ (todas).
 //
@@ -28,6 +30,12 @@
 //   fotoAlt: 'Árbitros entrenando en la cancha',
 // },
 export const novedades = [];
+
+// `npm run demo` (solo en localhost): si no hay novedades cargadas, muestra las de ejemplo de
+// novedades-demo.js para ver el diseño. En el sitio publicado esta condición es siempre falsa.
+if (import.meta.env.VITE_DEMO_NOVEDADES === 'true' && novedades.length === 0) {
+  novedades.push(...novedadesDemo);
+}
 
 // Copia ordenada de la más reciente a la más vieja
 export function novedadesOrdenadas() {

@@ -8,6 +8,8 @@ Requiere Node.js 20.19 o superior.
 
 - `npm install`: instala las dependencias.
 - `npm start`: servidor de desarrollo en [http://localhost:3000](http://localhost:3000).
+- `npm run demo`: igual que `npm start`, pero con novedades de ejemplo para ver el diseño mientras
+  `src/data/novedades.js` esté vacío. Nunca llegan al sitio publicado.
 - `npm run build`: genera el sitio en `build/` (lo que publica Netlify).
 - `npm run preview`: sirve el build localmente para revisarlo antes de publicar.
 - `npm test`: corre los tests con Vitest.
