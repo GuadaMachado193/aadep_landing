@@ -123,7 +123,8 @@
     }
 
     .navbar:not(.scrolled) .nav-links a::after {
-        background: #ffffff;
+        background: var(--crest-yellow, #fef000);
+        height: 3px;
     }
 }
 

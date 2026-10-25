@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackEvent } from '../analytics';
 
 export default function BotonWhatsapp() {
   const numero = "5493515728947"; 
@@ -12,6 +13,7 @@ export default function BotonWhatsapp() {
       target="_blank" 
       rel="noopener noreferrer"
       aria-label="Chat en WhatsApp"
+      onClick={() => trackEvent('whatsapp_click', { ubicacion: 'boton_flotante' })}
     >
       <svg 
         xmlns="http://www.w3.org/2000/svg" 

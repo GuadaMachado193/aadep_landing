@@ -1,9 +1,5 @@
-import React, { useRef } from 'react';
-import useReveal from '../hooks/useReveal';
-import { scrollConLoop } from './Noticias';
+import React from 'react';
 import { PUBLIC_URL } from '../publicUrl';
-
-const publicUrl = PUBLIC_URL;
 
 const ligas = [
   { id: 1, src: '/assets/ligas/LigaBeccarVarela.png', title: 'Liga Beccar Varela', subtitle: 'Fútbol Provincial' },
@@ -14,12 +10,12 @@ const ligas = [
   { id: 6, src: '/assets/ligas/LigadelSur.png', title: 'Liga del Sur', subtitle: 'Fútbol Provincial' },
   { id: 7, src: '/assets/ligas/LigaVillamariense.png', title: 'Liga Villamariense', subtitle: 'Fútbol Provincial' },
   { id: 8, src: '/assets/ligas/LigaGeneralRoca.png', title: 'Liga General Roca', subtitle: 'Fútbol Provincial' },
-  { id: 9, src: '/assets/ligas/torneo-regional.png', title: 'Torneo Regional Federal Amateur', subtitle: 'Fútbol Regional' },
+  { id: 9, src: '/assets/ligas/torneo-regional-escudo.png', title: 'Torneo Regional Federal Amateur', subtitle: 'Fútbol Regional' },
 ];
 
+// Carrusel continuo: la lista va dos veces seguidas y la animación la desplaza la mitad
+// de su ancho, así el final empalma con el principio. La segunda copia es solo visual.
 export default function Sponsors() {
-  const scrollRef = useRef(null);
-
   return (
     <section className="sponsors" id="liga">
       <div className="container">
@@ -27,49 +23,20 @@ export default function Sponsors() {
           <h2>Ligas Representadas</h2>
           <p>Organizaciones deportivas que confían en nuestros árbitros</p>
         </div>
+      </div>
 
-        <div className="carousel-wrapper">
-          <button
-            className="scroll-btn left"
-            aria-label="Ver ligas anteriores"
-            onClick={() => scrollConLoop(scrollRef.current, 'left')}
-          >
-            &#10094;
-          </button>
-
-          <div className="ligas-grid" ref={scrollRef}>
-            {ligas.map((liga) => (
-              <SponsorCard
-                key={liga.id}
-                src={publicUrl + liga.src}
-                title={liga.title}
-                subtitle={liga.subtitle}
-              />
-            ))}
-          </div>
-
-          <button
-            className="scroll-btn right"
-            aria-label="Ver ligas siguientes"
-            onClick={() => scrollConLoop(scrollRef.current, 'right')}
-          >
-            &#10095;
-          </button>
-        </div>
+      <div className="ligas-marquee">
+        <ul className="ligas-track">
+          {[...ligas, ...ligas].map((liga, i) => {
+            const copia = i >= ligas.length;
+            return (
+              <li key={`${liga.id}-${i}`} className={copia ? 'ligas-copia' : undefined} aria-hidden={copia || undefined}>
+                <img loading="lazy" src={PUBLIC_URL + liga.src} alt={copia ? '' : liga.title} title={liga.title} />
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
-  );
-}
-
-function SponsorCard({ src, title, subtitle }) {
-  const { ref, visible } = useReveal();
-  return (
-    <div ref={ref} className={'sponsor-item' + (visible ? ' fade-in-up' : '')}>
-      <img loading="lazy" src={src} alt={title} />
-      <div className="sponsor-info">
-        <h4>{title}</h4>
-        <p>{subtitle}</p>
-      </div>
-    </div>
   );
 }

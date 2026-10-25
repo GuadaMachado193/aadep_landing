@@ -9,6 +9,7 @@
     --white: #ffffff;
     --light-gray: #f8fafc;      /* slate-50 */
     --border-color: #e2e8f0;    /* slate-200 */
+    --crest-yellow: #fef000;    /* amarillo del escudo: solo acentos, nunca texto sobre blanco (1.2:1) */
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 16px 30px -12px rgba(2, 6, 23, 0.25);
     --border-radius: 12px;
@@ -126,38 +127,74 @@ section[id] {
     font-size: 0.9rem;
 }
 /* ESTILOS BASE (Escritorio / PC) */
-.ligas-grid {
-  display: flex;
-  flex-wrap: wrap;           /* Que bajen si no caben */
-  justify-content: center;   /* Centrados */
-  gap: 1.5rem;               /* Espacio entre tarjetas */
+/* Ligas: carrusel continuo de logos */
+.ligas-marquee {
+  overflow: hidden;
   padding: 1rem 0;
+  /* Desvanece los bordes para que los logos entren y salgan suave */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-/* ESTILOS MÓVIL (Carrusel) */
-@media (max-width: 768px) {
-  .ligas-grid {
-    flex-wrap: nowrap;          /* ¡Importante! Obliga a estar en una línea */
-    justify-content: flex-start; /* Alineados a la izquierda */
-    overflow-x: auto;           /* Permite scroll horizontal */
-    scroll-snap-type: x mandatory; /* Efecto de "imán" al deslizar */
-    -webkit-overflow-scrolling: touch; /* Scroll suave en iPhone */
-    padding-bottom: 20px;       /* Espacio para que no se corte la sombra */
-    
-    /* Ocultar barra de scroll fea (opcional) */
-    scrollbar-width: none;      /* Firefox */
-  }
-  
-  .ligas-grid::-webkit-scrollbar {
-    display: none;              /* Chrome/Safari */
-  }
+.ligas-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  animation: ligas-scroll 40s linear infinite;
+}
 
-  /* Ajuste de las tarjetas individuales en móvil */
-  .ligas-grid .sponsor-item {
-    flex: 0 0 85%;              /* Ocupa el 85% del ancho de la pantalla */
-    scroll-snap-align: center;  /* Se centra automáticamente al soltar */
-    margin-right: 10px;         /* Un pequeño margen extra */
+.ligas-marquee:hover .ligas-track {
+  animation-play-state: paused;
+}
+
+/* margin en lugar de gap: así las dos copias miden exactamente lo mismo y el empalme no salta */
+.ligas-track li {
+  margin-right: 4rem;
+}
+
+.ligas-track img {
+  display: block;
+  height: 72px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.7;
+  /* Funde el fondo blanco de los logos que no son transparentes con el gris de la sección */
+  mix-blend-mode: multiply;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.ligas-track li:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+@keyframes ligas-scroll {
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .ligas-track { animation-duration: 30s; }
+  .ligas-track li { margin-right: 2.5rem; }
+  .ligas-track img { height: 56px; max-width: 120px; }
+}
+
+/* Sin animación: los logos quedan quietos, centrados en varias filas */
+@media (prefers-reduced-motion: reduce) {
+  .ligas-marquee { -webkit-mask-image: none; mask-image: none; }
+  .ligas-track {
+    animation: none;
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 2rem;
   }
+  .ligas-track li { margin: 0 1.5rem; }
+  .ligas-copia { display: none; }
 }
 
 /* Estilos para los botones del carrusel */

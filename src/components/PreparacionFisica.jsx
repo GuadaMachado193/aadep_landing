@@ -1,7 +1,7 @@
 import React from 'react';
 import useReveal from '../hooks/useReveal';
 import '../styles/preparacion.css';
-import { PUBLIC_URL } from '../publicUrl';
+import Foto from './Foto';
 
 export default function PreparacionFisica() {
   const textReveal = useReveal();
@@ -51,8 +51,9 @@ export default function PreparacionFisica() {
             className={`preparacion-image-wrapper ${imgReveal.visible ? 'fade-in-up' : ''}`}
           >
             <div className="preparacion-image">
-              <img
-                src={`${PUBLIC_URL}/assets/grid/facu_valdez.webp`}
+              <Foto
+                src="/assets/grid/facu_valdez.webp"
+                sizes="(max-width: 992px) 92vw, 400px"
                 alt="Profesor de Preparación Física AADEP"
                 loading="lazy"
               />

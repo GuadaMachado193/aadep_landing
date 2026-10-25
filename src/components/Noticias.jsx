@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Camera } from 'lucide-react';
 import useReveal from '../hooks/useReveal';
 import '../styles/noticia.css';
-import { PUBLIC_URL } from '../publicUrl';
+import Foto from './Foto';
 
 const listaFotos = [
   { id: 1, src: '/assets/seccion-arbitros.webp', alt: 'Árbitros AADEP', featured: true },
@@ -98,7 +98,7 @@ export default function Noticias() {
               <NoticiaCard
                 key={foto.id}
                 featured={foto.featured}
-                src={PUBLIC_URL + foto.src}
+                src={foto.src}
                 alt={foto.alt}
               />
             ))}
@@ -139,7 +139,7 @@ export default function Noticias() {
               <div className="galeria-grid-completa">
                 {listaFotos.map((foto) => (
                   <div key={foto.id} className="foto-item">
-                    <img loading="lazy" src={PUBLIC_URL + foto.src} alt={foto.alt} />
+                    <Foto loading="lazy" src={foto.src} sizes="(max-width: 768px) 45vw, 240px" alt={foto.alt} />
                   </div>
                 ))}
               </div>
@@ -157,7 +157,12 @@ function NoticiaCard({ featured = false, src, alt }) {
   return (
     <article ref={ref} className={classes}>
       <div className="noticia-image">
-        <img loading="lazy" src={src} alt={alt} />
+        <Foto
+          loading="lazy"
+          src={src}
+          sizes={featured ? "(max-width: 768px) 85vw, 780px" : "(max-width: 768px) 85vw, 360px"}
+          alt={alt}
+        />
       </div>
     </article>
   );

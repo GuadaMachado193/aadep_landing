@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Activity, Award, BookOpen, Briefcase, CircleCheck, Target, Users } from 'lucide-react';
 import useReveal from '../hooks/useReveal';
-import { PUBLIC_URL } from '../publicUrl';
+import Foto from './Foto';
 
 const beneficios = [
   { Icono: BookOpen, texto: 'Formación teórica completa en reglas de juego' },
@@ -71,7 +71,7 @@ export default function Curso() {
 
           <div ref={ctaReveal.ref} className={"curso-cta" + (ctaReveal.visible ? ' fade-in-up' : '')}>
             <div className="curso-image">
-              <img loading="lazy" src={PUBLIC_URL + '/assets/valor_mision.jpg'} alt="Árbitros AADEP Córdoba" />
+              <Foto loading="lazy" src="/assets/valor_mision.jpg" sizes="200px" alt="Árbitros AADEP Córdoba" />
             </div>
           </div>
         </div>
