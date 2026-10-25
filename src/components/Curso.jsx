@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useReveal from '../hooks/useReveal';
+import { PUBLIC_URL } from '../publicUrl';
 
 export default function Curso() {
   const [showBeneficios, setShowBeneficios] = useState(false);
@@ -51,7 +52,7 @@ export default function Curso() {
 
           <div ref={ctaReveal.ref} className={"curso-cta" + (ctaReveal.visible ? ' fade-in-up' : '')}>
             <div className="curso-image">
-              <img loading="lazy" src={process.env.PUBLIC_URL + '/assets/valor_mision.jpg'} alt="Árbitros AADEP Córdoba" />
+              <img loading="lazy" src={PUBLIC_URL + '/assets/valor_mision.jpg'} alt="Árbitros AADEP Córdoba" />
             </div>
           </div>
         </div>

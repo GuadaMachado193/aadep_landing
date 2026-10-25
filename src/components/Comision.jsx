@@ -1,8 +1,9 @@
 import React from 'react';
 import useReveal from '../hooks/useReveal';
 import '../styles/comision.css';
+import { PUBLIC_URL } from '../publicUrl';
 
-const publicUrl = process.env.PUBLIC_URL || '';
+const publicUrl = PUBLIC_URL;
 
 const miembros = [
   {

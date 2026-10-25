@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
 import useReveal from '../hooks/useReveal';
 import { scrollConLoop } from './Noticias';
+import { PUBLIC_URL } from '../publicUrl';
 
-const publicUrl = process.env.PUBLIC_URL || '';
+const publicUrl = PUBLIC_URL;
 
 const ligas = [
   { id: 1, src: '/assets/ligas/LigaBeccarVarela.png', title: 'Liga Beccar Varela', subtitle: 'Fútbol Provincial' },

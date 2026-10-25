@@ -1,6 +1,7 @@
 import React from 'react';
 import useReveal from '../hooks/useReveal';
 import '../styles/preparacion.css';
+import { PUBLIC_URL } from '../publicUrl';
 
 export default function PreparacionFisica() {
   const textReveal = useReveal();
@@ -51,7 +52,7 @@ export default function PreparacionFisica() {
           >
             <div className="preparacion-image">
               <img
-                src={`${process.env.PUBLIC_URL}/assets/grid/facu_valdez.webp`}
+                src={`${PUBLIC_URL}/assets/grid/facu_valdez.webp`}
                 alt="Profesor de Preparación Física AADEP"
                 loading="lazy"
               />

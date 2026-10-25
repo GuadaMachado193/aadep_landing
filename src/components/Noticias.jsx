@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useReveal from '../hooks/useReveal';
 import '../styles/noticia.css';
+import { PUBLIC_URL } from '../publicUrl';
 
 const listaFotos = [
   { id: 1, src: '/assets/seccion-arbitros.webp', alt: 'Árbitros AADEP', featured: true },
@@ -96,7 +97,7 @@ export default function Noticias() {
               <NoticiaCard
                 key={foto.id}
                 featured={foto.featured}
-                src={process.env.PUBLIC_URL + foto.src}
+                src={PUBLIC_URL + foto.src}
                 alt={foto.alt}
               />
             ))}
@@ -137,7 +138,7 @@ export default function Noticias() {
               <div className="galeria-grid-completa">
                 {listaFotos.map((foto) => (
                   <div key={foto.id} className="foto-item">
-                    <img loading="lazy" src={process.env.PUBLIC_URL + foto.src} alt={foto.alt} />
+                    <img loading="lazy" src={PUBLIC_URL + foto.src} alt={foto.alt} />
                   </div>
                 ))}
               </div>

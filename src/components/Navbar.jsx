@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { scrollToHash } from '../hooks/useSmoothScroll';
 import '../styles/navbar.css';
+import { PUBLIC_URL } from '../publicUrl';
 
 // URL del sistema de gestión de árbitros: reemplazar cuando esté desplegado
 const PORTAL_URL = 'https://portal.aadep.com.ar';
@@ -71,7 +72,7 @@ export default function Navbar() {
           <div className="logo-container">
             <a href="#home" onClick={onNavClick} aria-label="Ir al inicio">
               <img
-                src={process.env.PUBLIC_URL + '/assets/aadep-logo.png'}
+                src={PUBLIC_URL + '/assets/aadep-logo.png'}
                 alt="Logo AADEP"
                 className="logo"
               />
