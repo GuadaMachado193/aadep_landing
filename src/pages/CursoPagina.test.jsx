@@ -1,7 +1,8 @@
 import { afterEach, expect, test } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
 import CursoPagina from './CursoPagina';
-import { curso, formatearFecha } from '../data/curso';
+import { curso } from '../data/curso';
+import { formatearFecha } from '../fechas';
 
 const original = structuredClone({ ...curso, beneficios: [], requisitos: [] });
 afterEach(() => {

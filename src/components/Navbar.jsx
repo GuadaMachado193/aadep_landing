@@ -2,21 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { scrollToHash } from '../hooks/useSmoothScroll';
 import '../styles/navbar.css';
 import { PUBLIC_URL } from '../publicUrl';
+import { novedades } from '../data/novedades';
 
 // URL del sistema de gestión de árbitros: reemplazar cuando esté desplegado
 const PORTAL_URL = 'https://portal.aadep.com.ar';
 
-const enlaces = [
-  { id: 'home', label: 'Inicio' },
-  { id: 'noticias', label: 'Árbitros' },
-  { id: 'nosotros', label: 'Nosotros' },
-  { id: 'curso', label: 'Curso' },
-  { id: 'comision', label: 'Comisión' },
-  { id: 'contacto', label: 'Contacto' },
-];
+// Secciones de la landing que además tienen página propia
+const PAGINAS = { curso: '/curso/', novedades: '/novedades/' };
 
-// pagina="curso": se usa fuera de la landing. Los enlaces vuelven a la landing (/#seccion)
-// y "Curso" queda marcado como activo.
+// pagina="curso" | "novedades": se usa fuera de la landing. Los enlaces vuelven a la landing
+// (/#seccion) o van a la página propia, y el de la página actual queda marcado como activo.
 export default function Navbar({ pagina }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -24,9 +19,20 @@ export default function Navbar({ pagina }) {
   const enLanding = !pagina;
   const hrefDe = (id) => {
     if (enLanding) return `#${id}`;
-    if (id === 'curso') return '/curso/';
+    if (PAGINAS[id]) return PAGINAS[id];
     return id === 'home' ? '/' : `/#${id}`;
   };
+
+  const enlaces = [
+    { id: 'home', label: 'Inicio' },
+    // "Novedades" aparece recién cuando hay alguna cargada en src/data/novedades.js
+    ...(novedades.length > 0 ? [{ id: 'novedades', label: 'Novedades' }] : []),
+    { id: 'noticias', label: 'Árbitros' },
+    { id: 'nosotros', label: 'Nosotros' },
+    { id: 'curso', label: 'Curso' },
+    { id: 'comision', label: 'Comisión' },
+    { id: 'contacto', label: 'Contacto' },
+  ];
 
   // Sombra/fondo del navbar al hacer scroll (con requestAnimationFrame como throttle)
   useEffect(() => {

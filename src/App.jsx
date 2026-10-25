@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Footer from './components/Footer';
 import Sponsors from './components/Sponsors';
 import Noticias from './components/Noticias';
+import Novedades from './components/Novedades';
 import Nosotros from './components/Nosotros';
 import Curso from './components/Curso';
 import Comision from './components/Comision';
@@ -19,6 +20,7 @@ function App() {
       <main>
         <Hero />
         <Sponsors />
+        <Novedades />
         <Noticias />
         <Nosotros />
         <PreparacionFisica/>

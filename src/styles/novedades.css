@@ -1,0 +1,208 @@
+/* ==========================================================================
+   Novedades: sección de la landing y página /novedades/
+   ========================================================================== */
+
+.novedades {
+    background: var(--white);
+}
+
+.novedades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.novedades-ver-todas {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* --- Tarjeta --- */
+.novedad-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.novedad-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.novedad-foto {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--light-gray);
+}
+
+.novedad-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.novedad-card:hover .novedad-foto img {
+    transform: scale(1.03);
+}
+
+.novedad-cuerpo {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.novedad-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* Azul marino sobre el amarillo del escudo: 13.5:1 */
+.novedad-categoria {
+    background: var(--crest-yellow);
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+}
+
+.novedad-card h2,
+.novedad-card h3 {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+}
+
+.novedad-resumen,
+.novedad-texto {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.novedad-link {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.novedad-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Página /novedades/ --- */
+.novedades-hero {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 9rem 0 4rem; /* deja lugar al navbar fijo */
+}
+
+.novedades-hero h1 {
+    font-size: clamp(2rem, 3vw + 1rem, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+}
+
+.novedades-hero h1::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--crest-yellow);
+    margin-top: 1rem;
+}
+
+.novedades-hero p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.15rem;
+    max-width: 560px;
+}
+
+.novedades-lista {
+    background: var(--light-gray);
+}
+
+.novedades-lista-items {
+    display: grid;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Tarjeta horizontal en la página: foto a la izquierda */
+.novedad-completa {
+    flex-direction: row;
+    scroll-margin-top: 110px;
+}
+
+.novedad-completa:hover {
+    transform: none;
+}
+
+.novedad-completa .novedad-foto {
+    flex: 0 0 320px;
+    aspect-ratio: auto;
+    min-height: 220px;
+}
+
+.novedad-completa h2 {
+    font-size: 1.4rem;
+}
+
+/* La novedad a la que se llegó desde la landing (/novedades/#id) */
+.novedad-destacada {
+    outline: 3px solid var(--crest-yellow);
+    outline-offset: 4px;
+}
+
+.novedades-vacio {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.novedades-vacio a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .novedad-completa {
+        flex-direction: column;
+    }
+
+    .novedad-completa .novedad-foto {
+        flex-basis: auto;
+        aspect-ratio: 16 / 10;
+        min-height: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .novedades-hero {
+        padding-top: 7.5rem;
+    }
+}

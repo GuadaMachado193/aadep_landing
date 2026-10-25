@@ -1,6 +1,6 @@
 // Genera versiones livianas de las imágenes clave. Uso: npm run imagenes
 // Escribe junto a los originales en public/assets/ y no los modifica.
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import sharp from 'sharp';
 
 const A = 'public/assets';
@@ -31,14 +31,16 @@ for (const t of tareas) {
   console.log(`${t.out}  ${info.width}×${info.height}  ${(info.size / 1024).toFixed(0)} KB`);
 }
 
-// Fotos de los componentes (galería, Comisión, Preparación, Curso): una versión WebP por
-// cada ancho de ANCHOS menor al original, y src/fotos.json con medidas y anchos para <Foto>.
-const fuentes = readdirSync('src/components')
-  .map((f) => readFileSync(`src/components/${f}`, 'utf8'))
+// Fotos de componentes, páginas y datos (galería, Comisión, Curso, novedades): una versión WebP
+// por cada ancho de ANCHOS menor al original, y src/fotos.json con medidas y anchos para <Foto>.
+const fuentes = ['src/components', 'src/pages', 'src/data']
+  .flatMap((dir) => readdirSync(dir).map((f) => readFileSync(`${dir}/${f}`, 'utf8')))
   .join('\n');
 const fotos = [...new Set(fuentes.match(/\/assets\/[\w/.-]+\.(?:webp|jpe?g)/gi))]
   // El hero y el escudo tienen sus versiones arriba; los logos de ligas se muestran a 80px
   .filter((src) => !/aadc_2026|aadep-logo|\/ligas\//.test(src))
+  // Las rutas de ejemplo en comentarios (o una foto que falta subir) se saltean con aviso
+  .filter((src) => existsSync(`public${src}`) || console.warn(`No existe public${src}: se saltea`))
   .sort();
 
 const indice = {};
