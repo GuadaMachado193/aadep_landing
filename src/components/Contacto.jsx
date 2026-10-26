@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { trackEvent } from '../analytics';
 
 const FORMSPREE_URL = 'https://formspree.io/f/mkojojye';
 
@@ -33,6 +35,8 @@ export default function Contacto() {
 
       if (response.ok) {
         setNotice({ type: 'success', msg: '¡Mensaje enviado correctamente! Te contactaremos pronto.' });
+        // generate_lead es el evento recomendado de GA4 para formularios de contacto
+        trackEvent('generate_lead', { form_name: 'contacto', tema: form.tema });
         setForm(FORM_INICIAL);
       } else {
         setNotice({ type: 'error', msg: 'Hubo un problema al enviar el mensaje. Intenta nuevamente.' });
@@ -55,21 +59,21 @@ export default function Contacto() {
             </div>
             <div className="contacto-datos">
               <div className="contacto-item">
-                <div className="contacto-icon">📍</div>
+                <div className="contacto-icon"><MapPin size={24} strokeWidth={2} aria-hidden="true" /></div>
                 <div className="contacto-text">
                   <h4>Nuestra Sede</h4>
                   <p>Estados Unidos 2840,<br />Córdoba, Argentina</p>
                 </div>
               </div>
               <div className="contacto-item">
-                <div className="contacto-icon">📧</div>
+                <div className="contacto-icon"><Mail size={24} strokeWidth={2} aria-hidden="true" /></div>
                 <div className="contacto-text">
                   <h4>Email</h4>
                   <p>aadep.cba@gmail.com</p>
                 </div>
               </div>
               <div className="contacto-item">
-                <div className="contacto-icon">📱</div>
+                <div className="contacto-icon"><Phone size={24} strokeWidth={2} aria-hidden="true" /></div>
                 <div className="contacto-text">
                   <h4>Teléfono</h4>
                   <p>+54 351 5728947</p>

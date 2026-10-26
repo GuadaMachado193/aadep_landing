@@ -15,8 +15,8 @@
 
 .navbar.scrolled {
     background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(226, 232, 240, 0.8);
 }
@@ -115,11 +115,25 @@
     color: var(--primary-color, #3b82f6);
 }
 
+/* Sobre la foto del hero el azul marino no se lee: activo y hover en blanco */
+@media (min-width: 993px) {
+    .navbar:not(.scrolled) .nav-links a:hover,
+    .navbar:not(.scrolled) .nav-links a.active {
+        color: #ffffff;
+    }
+
+    .navbar:not(.scrolled) .nav-links a::after {
+        background: var(--crest-yellow, #fef000);
+        height: 3px;
+    }
+}
+
 /* --- Botón Mi Portal --- */
 .nav-links a.portal-btn,
 .navbar.scrolled .nav-links a.portal-btn {
     background: var(--secondary-color, #0ea5e9);
-    color: #ffffff;
+    /* Azul marino sobre celeste: 5.9:1 (el blanco daba 2.8:1) */
+    color: var(--primary-color, #0b1f3a);
     padding: 0.55rem 1.3rem;
     border-radius: 50px;
     font-weight: 600;

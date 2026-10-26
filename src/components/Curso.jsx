@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
+import { CircleCheck } from 'lucide-react';
 import useReveal from '../hooks/useReveal';
+import Foto from './Foto';
+import { curso } from '../data/curso';
+
+const { beneficios, requisitos } = curso;
 
 export default function Curso() {
   const [showBeneficios, setShowBeneficios] = useState(false);
@@ -25,13 +30,13 @@ export default function Curso() {
                 </button>
                 <div id="beneficiosDetails" className={"beneficios-content" + (showBeneficios ? ' active' : '')}>
                   <h4>Beneficios del curso:</h4>
-                  <ul>
-                    <li>📚 Formación teórica completa en reglas de juego</li>
-                    <li>🏃‍♂️ Entrenamiento físico y técnico especializado</li>
-                    <li>🎯 Práctica en partidos reales de diferentes categorías</li>
-                    <li>👥 Networking con árbitros experimentados</li>
-                    <li>📋 Certificación oficial reconocida por la AFA</li>
-                    <li>💼 Oportunidades laborales en ligas cordobesas</li>
+                  <ul className="icon-list">
+                    {beneficios.map(({ Icono, texto }) => (
+                      <li key={texto}>
+                        <Icono size={20} strokeWidth={2} aria-hidden="true" />
+                        {texto}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -39,19 +44,24 @@ export default function Curso() {
 
             <div className="curso-requisitos">
               <h4>Requisitos para inscribirse:</h4>
-              <ul>
-                <li>✅ Edad mínima: 16 años</li>
-                <li>✅ Educación secundaria en curso o completa</li>
-                <li>✅ Buena condición física</li>
-                <li>✅ Disponibilidad para entrenamientos</li>
-                <li>✅ Compromiso con la ética deportiva</li>
+              <ul className="icon-list">
+                {requisitos.map((texto) => (
+                  <li key={texto}>
+                    <CircleCheck size={20} strokeWidth={2} aria-hidden="true" />
+                    {texto}
+                  </li>
+                ))}
               </ul>
             </div>
+
+            <a href="/curso/" className="btn btn-primary curso-ver-mas">
+              Ver toda la información del curso
+            </a>
           </div>
 
           <div ref={ctaReveal.ref} className={"curso-cta" + (ctaReveal.visible ? ' fade-in-up' : '')}>
             <div className="curso-image">
-              <img loading="lazy" src={process.env.PUBLIC_URL + '/assets/valor_mision.jpg'} alt="Árbitros AADEP Córdoba" />
+              <Foto loading="lazy" src="/assets/valor_mision.jpg" sizes="200px" alt="Árbitros AADEP Córdoba" />
             </div>
           </div>
         </div>

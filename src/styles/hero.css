@@ -54,8 +54,8 @@
 
 .hero-glass-panel {
     background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 24px;
     padding: 2.5rem 2rem; /* Reduje un poco el padding superior para compensar el logo */
@@ -182,8 +182,8 @@
         padding: 2rem 1rem; 
         /* Opcional: Hacemos el fondo un pelín más transparente si lo ves muy oscuro */
         background: rgba(255, 255, 255, 0.05); 
-        backdrop-filter: blur(12px); /* Menos blur ayuda al rendimiento y a la claridad en móviles */
         -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px); /* Menos blur ayuda al rendimiento y a la claridad en móviles */
     }
 
 
@@ -221,9 +221,10 @@
         
         /* 2. ...Cambiamos el enfoque para asegurar que las caras de los árbitros se vean arriba */
         object-position: center top; /* O prueba 'center 30%' */
-        
-        /* Opcional: Si el efecto parallax (position: fixed) se ve muy forzado o lento en móvil, 
-           puedes intentar desactivarlo solo en celulares: */
-        /* position: absolute; */
+    }
+
+    /* Sin parallax en celulares: position: fixed se traba al hacer scroll (sobre todo en iPhone) */
+    .hero-image {
+        position: absolute;
     }
 }

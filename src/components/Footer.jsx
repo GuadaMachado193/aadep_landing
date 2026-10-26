@@ -1,6 +1,9 @@
 import React from 'react';
+import { novedades } from '../data/novedades';
 
-export default function Footer() {
+// pagina="curso" | "novedades": fuera de la landing los enlaces vuelven a ella (/#seccion)
+export default function Footer({ pagina }) {
+  const base = pagina ? '/' : '';
   return (
     <footer>
       <div className="container">
@@ -16,12 +19,13 @@ export default function Footer() {
           <div className="footer-links">
             <h4>Links rápidos</h4>
             <ul>
-              <li><a href="#home">Inicio</a></li>
-              <li><a href="#noticias">Árbitros</a></li>
-              <li><a href="#nosotros">Nosotros</a></li>
-              <li><a href="#curso">Curso de Árbitros</a></li>
-              <li><a href="#comision">Comisión Directiva</a></li>
-              <li><a href="#contacto">Contacto</a></li>
+              <li><a href={`${base}#home`}>Inicio</a></li>
+              {novedades.length > 0 && <li><a href="/novedades/">Novedades</a></li>}
+              <li><a href={`${base}#noticias`}>Árbitros</a></li>
+              <li><a href={`${base}#nosotros`}>Nosotros</a></li>
+              <li><a href="/curso/">Curso de Árbitros</a></li>
+              <li><a href={`${base}#comision`}>Comisión Directiva</a></li>
+              <li><a href={`${base}#contacto`}>Contacto</a></li>
             </ul>
           </div>
 

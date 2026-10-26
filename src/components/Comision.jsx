@@ -1,27 +1,26 @@
 import React from 'react';
 import useReveal from '../hooks/useReveal';
 import '../styles/comision.css';
-
-const publicUrl = process.env.PUBLIC_URL || '';
+import Foto from './Foto';
 
 const miembros = [
   {
     id: 1,
-    src: `${publicUrl}/assets/matias_ezequiel_billone.webp`,
+    src: '/assets/matias_ezequiel_billone.webp',
     nombre: 'Matías Ezequiel Billone Carpio',
     cargo: 'Presidente',
     clase: 'presidente',
   },
   {
     id: 2,
-    src: `${publicUrl}/assets/comision-sosa.jpg`,
+    src: '/assets/comision-sosa.jpg',
     nombre: 'Leandro Andrés Sosa Abrile',
     cargo: 'Tesorero',
     clase: 'tesorero',
   },
   {
     id: 3,
-    src: `${publicUrl}/assets/alba-comision.jpg`,
+    src: '/assets/alba-comision.jpg',
     nombre: 'Alba Noemi León',
     cargo: 'Vocal Titular',
     clase: 'vocal',
@@ -53,8 +52,9 @@ function MiembroCard({ src, nombre, cargo, clase }) {
   return (
     <div ref={ref} className={`miembro-card ${visible ? 'fade-in-up' : ''}`}>
       <div className="miembro-image">
-        <img
+        <Foto
           src={src}
+          sizes="(max-width: 768px) 92vw, 380px"
           alt={nombre}
           className={clase}
           loading="lazy"

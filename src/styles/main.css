@@ -9,6 +9,7 @@
     --white: #ffffff;
     --light-gray: #f8fafc;      /* slate-50 */
     --border-color: #e2e8f0;    /* slate-200 */
+    --crest-yellow: #fef000;    /* amarillo del escudo: solo acentos, nunca texto sobre blanco (1.2:1) */
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 16px 30px -12px rgba(2, 6, 23, 0.25);
     --border-radius: 12px;
@@ -40,258 +41,6 @@ img, svg {
     margin: 0 auto;
     padding: 0 20px;
 }
-
-/* Header y Navegación */
-/* .navbar {
-    /* Degradado para integrarse con el hero 
-    background: linear-gradient(to bottom, rgba(11, 31, 58, 0.65), rgba(255,255,255,0.75));
-    backdrop-filter: blur(8px);
-    box-shadow: var(--shadow);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    transition: var(--transition);
-    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
-}
-
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.96);
-    box-shadow: var(--shadow-lg);
-}
-
-.navbar.scrolled .nav-container {
-    padding-top: 0.6rem;
-    padding-bottom: 0.4rem;
-}
-
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* reducir altura de la barra: menos padding vertical 
-    padding: 0.7rem 0.6rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    height: 50px; /* logo un poco más pequeño 
-    width: auto;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    /* menos separación entre enlaces para compactar la nav 
-    gap: 1.25rem;
-    align-items: center;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 400;
-    transition: var(--transition);
-    position: relative;
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: var(--transition);
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-.nav-links a.active {
-    color: var(--primary-color);
-}
-.nav-links a.active::after {
-    width: 100%;
-}
-
-.nav-actions {
-    display: flex;
-    align-items: center;
-
-    /* reducir espacio entre acciones (logo / links / botones) 
-    gap: 3.5rem;
-}
-
-.portal-btn {
-    background: var(--primary-color);
-    border: none;
-    color: var(--white);
-    /* más compacto 
-    padding: 0.5rem 1.25rem;
-    border-radius: calc(var(--border-radius) - 4px);
-    font-weight: 500;
-    font-size: 0.94rem;
-    transition: var(--transition);
-    margin-left: 1rem;
-}
-
-.portal-btn:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-}
-
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-.menu-toggle span {
-    width: 10px;
-    height: 1px;
-    background: var(--text-dark);
-    margin: 2px 0;
-    transition: var(--transition);
-} */
-
-/* Hero Section
-.hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-   
-}
-
-.hero-image {
-    position: fixed;
-    top: 0;
-    left: 50;
-    width: 100%;
-    height: 100%;
-    z-index: -3;
-
-    
-}
-
-.hero-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center -15%; /* mostrar más la parte baja (moneda) */
-/* 
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, rgba(17, 24, 39, 0.55), rgba(30, 58, 138, 0.75)), linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15));
-    z-index: -1;
-}
-
-.hero-content {
-    text-align: center;
-    color: var(--white);
-    max-width: 800px;
-    padding: 0 2rem;
-}
-
-.hero-trust {
-    margin-top: 1rem;
-    color: rgba(255,255,255,0.9);
-    font-weight: 500;
-}
-
-
-.chevron {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-    transform: rotate(45deg);
-    animation: bounce 1.2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: rotate(45deg) translate(0, 0); }
-    50% { transform: rotate(45deg) translate(2px, 4px); }
-}
-
-.hero-badge {
-    background: rgba(255, 255, 255, 0.18);
-    border: 1px solid rgba(255, 255, 255, 0.671);
-    backdrop-filter: blur(30px);
-    margin-top: 4rem;
-    padding: 0.4rem 1.2rem;
-    border-radius: 999px;
-    /* Texto en color oscuro para mayor contraste sobre el fondo claro del badge */
-    /*
-    color: var(--text-dark);
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
-    display: inline-block;
-}
-
-.hero-title {
-    font-size: 3.75rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    /* Sombra sutil para mejorar legibilidad sobre imagen 
-    text-shadow: 0 2px 12px rgba(0,0,0,0.25);
-}
-
-.hero-subtitle {
-    font-size: 1.3rem;
-    margin: 0 auto 2rem auto;
-    opacity: 0.95;
-    max-width: 720px;
-    letter-spacing: 0.2px;
-}
-
-.hero-actions {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.hero-actions .btn.btn-primary {
-    box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.35);
-}
-.hero-actions .btn.btn-primary:hover {
-    transform: translateY(-2px);
-}
-.hero-actions .btn.btn-outline-light {
-    border-width: 2px;
-} */
 
 /* Secciones generales */
 section {
@@ -378,38 +127,74 @@ section[id] {
     font-size: 0.9rem;
 }
 /* ESTILOS BASE (Escritorio / PC) */
-.ligas-grid {
-  display: flex;
-  flex-wrap: wrap;           /* Que bajen si no caben */
-  justify-content: center;   /* Centrados */
-  gap: 1.5rem;               /* Espacio entre tarjetas */
+/* Ligas: carrusel continuo de logos */
+.ligas-marquee {
+  overflow: hidden;
   padding: 1rem 0;
+  /* Desvanece los bordes para que los logos entren y salgan suave */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-/* ESTILOS MÓVIL (Carrusel) */
-@media (max-width: 768px) {
-  .ligas-grid {
-    flex-wrap: nowrap;          /* ¡Importante! Obliga a estar en una línea */
-    justify-content: flex-start; /* Alineados a la izquierda */
-    overflow-x: auto;           /* Permite scroll horizontal */
-    scroll-snap-type: x mandatory; /* Efecto de "imán" al deslizar */
-    -webkit-overflow-scrolling: touch; /* Scroll suave en iPhone */
-    padding-bottom: 20px;       /* Espacio para que no se corte la sombra */
-    
-    /* Ocultar barra de scroll fea (opcional) */
-    scrollbar-width: none;      /* Firefox */
-  }
-  
-  .ligas-grid::-webkit-scrollbar {
-    display: none;              /* Chrome/Safari */
-  }
+.ligas-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  animation: ligas-scroll 40s linear infinite;
+}
 
-  /* Ajuste de las tarjetas individuales en móvil */
-  .ligas-grid .sponsor-item {
-    flex: 0 0 85%;              /* Ocupa el 85% del ancho de la pantalla */
-    scroll-snap-align: center;  /* Se centra automáticamente al soltar */
-    margin-right: 10px;         /* Un pequeño margen extra */
+.ligas-marquee:hover .ligas-track {
+  animation-play-state: paused;
+}
+
+/* margin en lugar de gap: así las dos copias miden exactamente lo mismo y el empalme no salta */
+.ligas-track li {
+  margin-right: 4rem;
+}
+
+.ligas-track img {
+  display: block;
+  height: 72px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.7;
+  /* Funde el fondo blanco de los logos que no son transparentes con el gris de la sección */
+  mix-blend-mode: multiply;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.ligas-track li:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+@keyframes ligas-scroll {
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .ligas-track { animation-duration: 30s; }
+  .ligas-track li { margin-right: 2.5rem; }
+  .ligas-track img { height: 56px; max-width: 120px; }
+}
+
+/* Sin animación: los logos quedan quietos, centrados en varias filas */
+@media (prefers-reduced-motion: reduce) {
+  .ligas-marquee { -webkit-mask-image: none; mask-image: none; }
+  .ligas-track {
+    animation: none;
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 2rem;
   }
+  .ligas-track li { margin: 0 1.5rem; }
+  .ligas-copia { display: none; }
 }
 
 /* Estilos para los botones del carrusel */
@@ -459,11 +244,11 @@ section[id] {
 }
 
 .form-notice.success {
-  background: #10b981;
+  background: #047857; /* emerald-700: blanco encima 5.5:1 */
 }
 
 .form-notice.error {
-  background: #ef4444;
+  background: #b91c1c; /* red-700: blanco encima 6.5:1 */
 }
 
 /* Oculta visualmente pero accesible para lectores de pantalla */
@@ -482,6 +267,12 @@ section[id] {
 .galeria-cta {
   text-align: center;
   margin-top: 30px;
+}
+
+.galeria-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* MOSTRAR SOLO EN MÓVIL */
@@ -559,6 +350,11 @@ section[id] {
     border-radius: var(--border-radius);
 }
 
+/* Enlace a la página /curso/ */
+.curso-ver-mas {
+    margin-top: 1.5rem;
+}
+
 .curso-requisitos h4 {
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -572,6 +368,19 @@ section[id] {
 .curso-requisitos li {
     padding: 0.5rem 0;
     font-size: 1rem;
+}
+
+/* Listas con ícono (beneficios y requisitos del curso) */
+.icon-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.icon-list svg {
+    flex-shrink: 0;
+    color: var(--primary-color);
+    margin-top: 0.15rem;
 }
 
 .curso-image {
@@ -642,6 +451,7 @@ section[id] {
 
 .contacto-icon {
     font-size: 1.5rem;
+    line-height: 0;
     color: var(--primary-color);
     margin-top: 0.25rem;
 }

@@ -1,9 +1,9 @@
 import React from 'react';
+import { trackEvent } from '../analytics';
+import { linkWhatsapp } from '../whatsapp';
 
 export default function BotonWhatsapp() {
-  const numero = "5493515728947"; 
-  const mensaje = "Hola, me gustaría recibir más información sobre AADEP.";
-  const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+  const link = linkWhatsapp('Hola, me gustaría recibir más información sobre AADEP.');
 
   return (
     <a 
@@ -12,6 +12,7 @@ export default function BotonWhatsapp() {
       target="_blank" 
       rel="noopener noreferrer"
       aria-label="Chat en WhatsApp"
+      onClick={() => trackEvent('whatsapp_click', { ubicacion: 'boton_flotante' })}
     >
       <svg 
         xmlns="http://www.w3.org/2000/svg" 

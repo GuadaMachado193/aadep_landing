@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# AADEP — Landing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sitio de la Asociación de Árbitros Deportivos de Córdoba ([aadep.com.ar](https://aadep.com.ar)). React 19 + [Vite](https://vite.dev).
 
-## Available Scripts
+Requiere Node.js 20.19 o superior.
 
-In the project directory, you can run:
+## Comandos
 
-### `npm start`
+- `npm install`: instala las dependencias.
+- `npm start`: servidor de desarrollo en [http://localhost:3000](http://localhost:3000).
+- `npm run demo`: igual que `npm start`, pero con novedades de ejemplo para ver el diseño mientras
+  `src/data/novedades.js` esté vacío. Nunca llegan al sitio publicado.
+- `npm run build`: genera el sitio en `build/` (lo que publica Netlify).
+- `npm run preview`: sirve el build localmente para revisarlo antes de publicar.
+- `npm test`: corre los tests con Vitest.
+- `npm run imagenes`: regenera las versiones livianas de las fotos (después de agregar o cambiar una).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Datos del curso
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Fecha, modalidad, horarios, costo, link de inscripción, programa y preguntas frecuentes están en
+`src/data/curso.js`. Se completan ahí y se publica de nuevo. Un dato vacío se muestra como
+"A confirmar" y una lista vacía oculta su sección.
 
-### `npm test`
+## Novedades
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Se cargan en `src/data/novedades.js` (el archivo explica cada campo y trae un ejemplo). Las 3 más
+recientes aparecen en la landing y todas en `/novedades/`. Mientras la lista esté vacía, la sección
+y el enlace "Novedades" del menú no se muestran. Si una novedad lleva foto nueva, después de
+subirla a `public/assets/` correr `npm run imagenes`.
 
-### `npm run build`
+## Estructura
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `index.html`: la landing (meta tags, Google Analytics, fuentes).
+- `curso/index.html`, `novedades/index.html`: las páginas `/curso/` y `/novedades/`, con sus propios meta tags.
+- `public/assets/`: imágenes y logos, servidos tal cual.
+- `src/components/`: una sección de la landing por archivo.
+- `src/pages/`: páginas aparte de la landing (`CursoPagina.jsx`, `NovedadesPagina.jsx`).
+- `src/data/`: contenido editable (curso y novedades).
+- `src/styles/`: estilos por sección; `main.css` tiene las variables de color.
+- `src/publicUrl.js`: ruta base para las imágenes de `public/`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+El sitio usa rutas absolutas (`base: '/'` en `vite.config.js`), así que tiene que publicarse en la
+raíz del dominio, como aadep.com.ar.

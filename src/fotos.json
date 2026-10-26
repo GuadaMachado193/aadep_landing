@@ -1,0 +1,483 @@
+{
+  "/assets/alba-comision.jpg": {
+    "w": 853,
+    "h": 1280,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/alejo3.jpg": {
+    "w": 1280,
+    "h": 853,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/comision-sosa.jpg": {
+    "w": 1600,
+    "h": 1068,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/aadc_grid.webp": {
+    "w": 1200,
+    "h": 800,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/alba_grid.webp": {
+    "w": 1200,
+    "h": 1356,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/albert_grid.webp": {
+    "w": 739,
+    "h": 1600,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/grid/altamirano_grid.webp": {
+    "w": 1200,
+    "h": 1807,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/atorri_grid.webp": {
+    "w": 1066,
+    "h": 1600,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/baldassi_grid.webp": {
+    "w": 1200,
+    "h": 800,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/coltrito_grid.webp": {
+    "w": 961,
+    "h": 1075,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/cordoba_grid.webp": {
+    "w": 1200,
+    "h": 800,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/david_grid.webp": {
+    "w": 1200,
+    "h": 1147,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/eve_arbitro.webp": {
+    "w": 1170,
+    "h": 1161,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/facu_valdez.webp": {
+    "w": 800,
+    "h": 1067,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/grid/fede_grid.webp": {
+    "w": 800,
+    "h": 530,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/grid/gonzales_grid.webp": {
+    "w": 1200,
+    "h": 1800,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/kevin_grid.webp": {
+    "w": 1200,
+    "h": 801,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/leguizamon_grid.webp": {
+    "w": 1029,
+    "h": 1600,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/leiria.webp": {
+    "w": 853,
+    "h": 1280,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/grid/lipari_grid.webp": {
+    "w": 1618,
+    "h": 1080,
+    "variantes": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/assets/grid/lopez_grid.webp": {
+    "w": 1200,
+    "h": 800,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/mario_grid.webp": {
+    "w": 1066,
+    "h": 1600,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/marzzoli_grid.webp": {
+    "w": 4000,
+    "h": 4000,
+    "variantes": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/assets/grid/nelson_grid.webp": {
+    "w": 1280,
+    "h": 854,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/nn2_grid.webp": {
+    "w": 1500,
+    "h": 1001,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/nn_grid.webp": {
+    "w": 1066,
+    "h": 1600,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/pablo_billy.webp": {
+    "w": 1200,
+    "h": 1600,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/pre_temporada.webp": {
+    "w": 1200,
+    "h": 900,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/grid/rivadera_grid.webp": {
+    "w": 852,
+    "h": 1280,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/grid/valdez_grid.webp": {
+    "w": 852,
+    "h": 1280,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/grid/vilca_grid.webp": {
+    "w": 1600,
+    "h": 1170,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/guadap.webp": {
+    "w": 1600,
+    "h": 1200,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/imagen-grid3.jpg": {
+    "w": 1247,
+    "h": 1280,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/lipari-grid.webp": {
+    "w": 1067,
+    "h": 1600,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/matias_ezequiel_billone.webp": {
+    "w": 1067,
+    "h": 1600,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/novedades/clasico-racing-independiente-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/curso-arbitras-federales-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/curso-federal-san-luis-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/curso-fifa-rap-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/debut-lea-liga-profesional-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/designaciones-octubre-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/dia-del-arbitro-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/diplomas-arbitros-federales-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/final-copa-cordoba-femenina-2025.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/final-copa-pais-2025.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/final-federal-a-2026.webp": {
+    "w": 1080,
+    "h": 1350,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/novedades/final-liga-beccar-varela-2025.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/final-liga-beccar-varela-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/final-liga-independiente-2025.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/final-liga-regional-sur-2025.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/final-liga-regional-sur-primera-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/final-liga-regional-sur-reserva-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/final-liga-roca-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/final-regional-federal-ida-2026.webp": {
+    "w": 859,
+    "h": 577,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/mundial-potreros-pinto-2026.webp": {
+    "w": 486,
+    "h": 486,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/nuevos-arbitros-provinciales-2025.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/nuevos-arbitros-provinciales-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/pasantia-afa-2025.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/pasantias-afa-2026.webp": {
+    "w": 1080,
+    "h": 1350,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/novedades/premios-alumni-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/titulos-arbitro-federal-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/novedades/tres-arbitras-primera-division-2026.webp": {
+    "w": 640,
+    "h": 640,
+    "variantes": [
+      480
+    ]
+  },
+  "/assets/seccion-arbitros.webp": {
+    "w": 1600,
+    "h": 1137,
+    "variantes": [
+      480,
+      960
+    ]
+  },
+  "/assets/valor_mision.jpg": {
+    "w": 720,
+    "h": 1080,
+    "variantes": [
+      480
+    ]
+  }
+}
