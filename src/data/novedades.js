@@ -245,6 +245,18 @@ export const novedades = [
     link: { url: 'https://www.instagram.com/aadep_cordoba/p/DQsH38WEeug/', texto: 'Ver en Instagram' },
   },
   {
+    id: 'final-regional-federal-ida-2026',
+    fecha: '2026-02-01',
+    categoria: 'Finales',
+    titulo: 'Final de ida del Torneo Regional Federal Amateur: Juventud Unida vs Ben Hur',
+    resumen:
+      'Una cuaterna de AADEP dirigió la final de ida entre Juventud Unida (Gualeguaychú) y Ben Hur (Rafaela), con Leandro Domínguez como árbitro principal.',
+    texto:
+      'Árbitro principal: Leandro Domínguez. Asistentes: Lautaro Tuninetti y Agustín Loyola. Cuarto árbitro: Fabrizio Lipari.\n\nLa final de ida se jugó el 1 de febrero.',
+    foto: '/assets/novedades/final-regional-federal-ida-2026.webp',
+    fotoAlt: 'Los cuatro árbitros de AADEP salen a la cancha por el túnel inflable antes de la final',
+  },
+  {
     id: 'final-copa-pais-2025',
     fecha: '2025-10-31',
     categoria: 'Finales',
