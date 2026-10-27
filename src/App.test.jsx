@@ -8,5 +8,6 @@ test('renderiza el título del hero y las secciones principales', () => {
   ).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'Ligas Representadas' })).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'Preparación Física' })).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'Mi Portal' })).toHaveAttribute('href', 'https://portal.aadep.com.ar');
+  // El botón "Mi Portal" se quitó del menú
+  expect(screen.queryByRole('link', { name: 'Mi Portal' })).not.toBeInTheDocument();
 });

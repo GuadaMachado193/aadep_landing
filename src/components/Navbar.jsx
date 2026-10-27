@@ -4,9 +4,6 @@ import '../styles/navbar.css';
 import { PUBLIC_URL } from '../publicUrl';
 import { novedades } from '../data/novedades';
 
-// URL del sistema de gestión de árbitros: reemplazar cuando esté desplegado
-const PORTAL_URL = 'https://portal.aadep.com.ar';
-
 // Secciones de la landing que además tienen página propia
 const PAGINAS = { curso: '/curso/', novedades: '/novedades/' };
 
@@ -108,17 +105,6 @@ export default function Navbar({ pagina }) {
                 </a>
               </li>
             ))}
-            <li>
-              <a
-                href={PORTAL_URL}
-                className="portal-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMenu}
-              >
-                Mi Portal
-              </a>
-            </li>
           </ul>
 
           <button
