@@ -248,11 +248,11 @@ export const novedades = [
     id: 'juventud-unida-defensores-la-boca-2026',
     fecha: '2026-10-25',
     categoria: 'Designaciones',
-    titulo: 'Cuartos de final del Regional Federal Amateur: Juventud Unida vs Defensores de La Boca',
+    titulo: 'Octavos de final del Regional Federal Amateur: Juventud Unida vs Defensores de La Boca',
     resumen:
-      'Una cuaterna de AADEP dirigió la ida de cuartos de final entre Juventud Unida (Mina Clavero) y Defensores de La Boca (La Rioja), con Emiliano Martino como árbitro principal.',
+      'Una cuaterna de AADEP dirigió la ida de octavos de final entre Juventud Unida (Mina Clavero) y Defensores de La Boca (La Rioja), que terminó 0 a 0. El árbitro principal fue Emiliano Martino.',
     texto:
-      'Árbitro principal: Emiliano Martino. Asistentes: Matías López y Bautista Baldassi. Cuarto árbitro: Santiago Gudiño.\n\nEl partido de ida de los cuartos de final del Torneo Regional Federal Amateur se jugó el 25 de octubre.',
+      'Árbitro principal: Emiliano Martino. Asistentes: Matías López y Bautista Baldassi. Cuarto árbitro: Santiago Gudiño.\n\nEl partido de ida de los octavos de final del Torneo Regional Federal Amateur se jugó el 25 de octubre y terminó 0 a 0.',
     foto: '/assets/novedades/juventud-unida-defensores-la-boca-2026.webp',
     fotoAlt: 'La terna arbitral de AADEP con los capitanes de Juventud Unida y Defensores de La Boca antes del partido',
   },
@@ -262,9 +262,9 @@ export const novedades = [
     categoria: 'Designaciones',
     titulo: 'Cuartos de final del Regional Federal Amateur: Unión de Villa Krause vs Desamparados',
     resumen:
-      'Fabrizio Lipari fue el árbitro principal de la ida de cuartos de final en el Estadio del Bicentenario de San Juan.',
+      'Fabrizio Lipari fue el árbitro principal de la ida de cuartos de final en el Estadio del Bicentenario de San Juan, que terminó 1 a 1.',
     texto:
-      'Por AADEP, Fabrizio Lipari como árbitro principal y Alejo Alfonso como cuarto árbitro. Los asistentes fueron Maximiliano Vacca y Brandon Mansilla, de otra asociación.\n\nEl partido de ida de los cuartos de final del Torneo Regional Federal Amateur, entre Unión de Villa Krause y Desamparados, se jugó el 25 de octubre en el Estadio del Bicentenario (San Juan).',
+      'Por AADEP, Fabrizio Lipari como árbitro principal y Alejo Alfonso como cuarto árbitro. Los asistentes fueron Maximiliano Vacca y Brandon Mansilla, de otra asociación.\n\nEl partido de ida de los cuartos de final del Torneo Regional Federal Amateur, entre Unión de Villa Krause y Desamparados, se jugó el 25 de octubre en el Estadio del Bicentenario (San Juan) y terminó 1 a 1.',
     foto: '/assets/novedades/cuartos-regional-federal-san-juan-2026.webp',
     fotoAlt: 'Los cuatro árbitros del partido en el Estadio del Bicentenario de San Juan',
   },
