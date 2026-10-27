@@ -281,6 +281,14 @@
       480
     ]
   },
+  "/assets/novedades/cuartos-regional-federal-san-juan-2026.webp": {
+    "w": 1080,
+    "h": 608,
+    "variantes": [
+      480,
+      960
+    ]
+  },
   "/assets/novedades/curso-arbitras-federales-2026.webp": {
     "w": 640,
     "h": 640,
@@ -406,6 +414,14 @@
     "h": 577,
     "variantes": [
       480
+    ]
+  },
+  "/assets/novedades/juventud-unida-defensores-la-boca-2026.webp": {
+    "w": 1080,
+    "h": 761,
+    "variantes": [
+      480,
+      960
     ]
   },
   "/assets/novedades/mundial-potreros-pinto-2026.webp": {
