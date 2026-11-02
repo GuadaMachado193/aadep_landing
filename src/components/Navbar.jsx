@@ -3,11 +3,12 @@ import { scrollToHash } from '../hooks/useSmoothScroll';
 import '../styles/navbar.css';
 import { PUBLIC_URL } from '../publicUrl';
 import { novedades } from '../data/novedades';
+import { partidos } from '../data/partidos';
 
 // Secciones de la landing que además tienen página propia
-const PAGINAS = { curso: '/curso/', novedades: '/novedades/' };
+const PAGINAS = { curso: '/curso/', novedades: '/novedades/', designaciones: '/designaciones/' };
 
-// pagina="curso" | "novedades": se usa fuera de la landing. Los enlaces vuelven a la landing
+// pagina="curso" | "novedades" | "designaciones": se usa fuera de la landing. Los enlaces vuelven a la landing
 // (/#seccion) o van a la página propia, y el de la página actual queda marcado como activo.
 export default function Navbar({ pagina }) {
   const [open, setOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function Navbar({ pagina }) {
 
   const enlaces = [
     { id: 'home', label: 'Inicio' },
+    ...(partidos.length > 0 ? [{ id: 'designaciones', label: 'Designaciones' }] : []),
     // "Novedades" aparece recién cuando hay alguna cargada en src/data/novedades.js
     ...(novedades.length > 0 ? [{ id: 'novedades', label: 'Novedades' }] : []),
     { id: 'noticias', label: 'Árbitros' },

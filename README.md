@@ -21,9 +21,15 @@ Fecha, modalidad, horarios, costo, link de inscripción, programa y preguntas fr
 `src/data/curso.js`. Se completan ahí y se publica de nuevo. Un dato vacío se muestra como
 "A confirmar" y una lista vacía oculta su sección.
 
+## Designaciones y resultados
+
+Cada partido se carga en `src/data/partidos.js` (el archivo explica cada campo y trae un ejemplo). Los
+próximos y los últimos jugados aparecen en la landing, y todos en `/designaciones/`. Cuando se juega un
+partido, completar `resultado`.
+
 ## Novedades
 
-Se cargan en `src/data/novedades.js` (el archivo explica cada campo y trae un ejemplo). Las 3 más
+Las noticias de la asociación se cargan en `src/data/novedades.js` (el archivo explica cada campo y trae un ejemplo). Las 3 más
 recientes aparecen en la landing y todas en `/novedades/`. Mientras la lista esté vacía, la sección
 y el enlace "Novedades" del menú no se muestran. Si una novedad lleva foto nueva, después de
 subirla a `public/assets/` correr `npm run imagenes`.
@@ -31,11 +37,11 @@ subirla a `public/assets/` correr `npm run imagenes`.
 ## Estructura
 
 - `index.html`: la landing (meta tags, Google Analytics, fuentes).
-- `curso/index.html`, `novedades/index.html`: las páginas `/curso/` y `/novedades/`, con sus propios meta tags.
+- `curso/index.html`, `novedades/index.html`, `designaciones/index.html`: las páginas `/curso/`, `/novedades/` y `/designaciones/`, con sus propios meta tags.
 - `public/assets/`: imágenes y logos, servidos tal cual.
 - `src/components/`: una sección de la landing por archivo.
-- `src/pages/`: páginas aparte de la landing (`CursoPagina.jsx`, `NovedadesPagina.jsx`).
-- `src/data/`: contenido editable (curso y novedades).
+- `src/pages/`: páginas aparte de la landing (`CursoPagina.jsx`, `NovedadesPagina.jsx`, `DesignacionesPagina.jsx`).
+- `src/data/`: contenido editable (curso, novedades y partidos).
 - `src/styles/`: estilos por sección; `main.css` tiene las variables de color.
 - `src/publicUrl.js`: ruta base para las imágenes de `public/`.
 

@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Designaciones y resultados: sección de la landing y página /designaciones/
+   La tarjeta parte de .novedad-card (novedades.css)
+   ========================================================================== */
+
+.partidos {
+    background: var(--light-gray);
+}
+
+.partido-torneo {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.partido-vs {
+    color: var(--text-light);
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.partido-resultado {
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 800;
+    padding: 0.3rem 0.9rem;
+    border-radius: 8px;
+    width: fit-content;
+    margin-bottom: 1rem;
+}
+
+.partido-datos {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.3rem 1rem;
+    margin: 0.25rem 0 1rem;
+    font-size: 0.95rem;
+}
+
+.partido-datos dt {
+    color: var(--text-light);
+}
+
+.partido-datos dd {
+    color: var(--text-dark);
+    font-weight: 600;
+    margin: 0;
+}
+
+.partidos-grupo + .partidos-grupo {
+    margin-top: 4rem;
+}
+
+.partidos-grupo h2 {
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
+    color: var(--text-dark);
+    font-size: 1.6rem;
+}

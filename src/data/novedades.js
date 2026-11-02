@@ -1,6 +1,7 @@
 import { novedadesDemo } from './novedades-demo';
 
-// Novedades de AADEP: designaciones, cursos, resultados, actividades.
+// Noticias y novedades de AADEP: formación, cursos, actividades institucionales.
+// Las designaciones y los resultados de los partidos van aparte, en src/data/partidos.js.
 // Las usan la sección Novedades de la landing (las 3 más recientes) y la página /novedades/ (todas).
 //
 // Para publicar una novedad: agregar un objeto a la lista y volver a publicar el sitio.
@@ -10,7 +11,7 @@ import { novedadesDemo } from './novedades-demo';
 // Campos:
 // - id:       identificador único, en minúsculas y con guiones (se usa en el link /novedades/#id)
 // - fecha:    'AAAA-MM-DD'
-// - categoria: por ejemplo 'Designaciones', 'Cursos', 'Resultados', 'Institucional'
+// - categoria: por ejemplo 'Formación', 'Cursos', 'Institucional'
 // - titulo:   una línea
 // - resumen:  una o dos oraciones; es lo que se ve en la landing
 // - texto:    opcional, el detalle completo para la página; párrafos separados por una línea en blanco
@@ -30,32 +31,6 @@ import { novedadesDemo } from './novedades-demo';
 //   fotoAlt: 'Árbitros entrenando en la cancha',
 // },
 export const novedades = [
-  {
-    id: 'designaciones-octubre-2026',
-    fecha: '2026-10-24',
-    categoria: 'Designaciones',
-    titulo: 'Designaciones de la semana en el Federal A y el Regional Federal',
-    resumen:
-      'Árbitros de AADEP fueron designados para cuatro partidos de la Reválida del Federal A y del Torneo Regional Federal Amateur.',
-    texto:
-      'Torneo Federal A, Reválida: Sportivo LP vs Alvarado y Boca Unidos vs Gimnasia y Esgrima.\n\nTorneo Regional Federal Amateur: Juventud Unida vs Defensores de La Boca y Unión vs Desamparados.',
-    foto: '/assets/novedades/designaciones-octubre-2026.webp',
-    fotoAlt: 'Árbitro de AADEP con el auricular de comunicación, en la placa de designaciones',
-    link: { url: 'https://www.instagram.com/aadep_cordoba/', texto: 'Ver las designaciones en Instagram' },
-  },
-  {
-    id: 'final-federal-a-2026',
-    fecha: '2026-10-23',
-    categoria: 'Designaciones',
-    titulo: 'Final por el ascenso del Federal A: Cipolletti vs San Martín',
-    resumen:
-      'Ezequiel Billone fue designado árbitro de la final por el ascenso del Torneo Federal A, el 25 de octubre en el Estadio Juan Pablo Francia.',
-    texto:
-      'La terna para la final la completan Carlos Viglietti, Joaquín Badano, Lucas Rodríguez y Antonella Pajón.\n\nEl partido se juega el sábado 25 de octubre a las 15 h en el Estadio Juan Pablo Francia.',
-    foto: '/assets/novedades/final-federal-a-2026.webp',
-    fotoAlt: 'Ezequiel Billone, árbitro de la final por el ascenso del Torneo Federal A',
-    link: { url: 'https://www.instagram.com/aadep_cordoba/p/De2fSKnC9eg/', texto: 'Ver en Instagram' },
-  },
   {
     id: 'pasantias-afa-2026',
     fecha: '2026-10-23',
@@ -81,26 +56,6 @@ export const novedades = [
     foto: '/assets/novedades/mundial-potreros-pinto-2026.webp',
     fotoAlt: 'Árbitros de AADEP con la bandera de la asociación en el Mundial de Potreros Pinto',
     link: { url: 'https://www.instagram.com/aadep_cordoba/p/Deplo-jFHsd/', texto: 'Ver en Instagram' },
-  },
-  {
-    id: 'debut-lea-liga-profesional-2026',
-    fecha: '2026-10-15',
-    categoria: 'Designaciones',
-    titulo: 'Debut en la Liga Profesional: Newell’s vs Central Córdoba',
-    resumen: 'Lea debuta como árbitro en la Liga Profesional de AFA. ¡Felicitaciones!',
-    foto: '/assets/novedades/debut-lea-liga-profesional-2026.webp',
-    fotoAlt: 'Placa de designación para Newell’s vs Central Córdoba en la Liga Profesional',
-    link: { url: 'https://www.instagram.com/aadep_cordoba/p/Dehsw-TC_SO/', texto: 'Ver en Instagram' },
-  },
-  {
-    id: 'clasico-racing-independiente-2026',
-    fecha: '2026-10-15',
-    categoria: 'Designaciones',
-    titulo: 'Hay clásico: Racing vs Independiente',
-    resumen: 'Ezequiel "Billy" Billone fue designado para el clásico de Avellaneda en la Liga Profesional. ¡Felicitaciones, Billy!',
-    foto: '/assets/novedades/clasico-racing-independiente-2026.webp',
-    fotoAlt: 'Placa de designación para Racing vs Independiente en la Liga Profesional',
-    link: { url: 'https://www.instagram.com/aadep_cordoba/p/DefpKs-xx0u/', texto: 'Ver en Instagram' },
   },
   {
     id: 'dia-del-arbitro-2026',
@@ -243,134 +198,6 @@ export const novedades = [
     foto: '/assets/novedades/pasantia-afa-2025.webp',
     fotoAlt: 'Fabrizio Lipari, Matías López y Santiago Gudiño en la sede de AFA',
     link: { url: 'https://www.instagram.com/aadep_cordoba/p/DQsH38WEeug/', texto: 'Ver en Instagram' },
-  },
-  {
-    id: 'juventud-unida-defensores-la-boca-2026',
-    fecha: '2026-10-25',
-    categoria: 'Designaciones',
-    titulo: 'Octavos de final del Regional Federal Amateur: Juventud Unida vs Defensores de La Boca',
-    resumen:
-      'Una cuaterna de AADEP dirigió la ida de octavos de final entre Juventud Unida (Mina Clavero) y Defensores de La Boca (La Rioja), que terminó 0 a 0. El árbitro principal fue Emiliano Martino.',
-    texto:
-      'Árbitro principal: Emiliano Martino. Asistentes: Matías López y Bautista Baldassi. Cuarto árbitro: Santiago Gudiño.\n\nEl partido de ida de los octavos de final del Torneo Regional Federal Amateur se jugó el 25 de octubre y terminó 0 a 0.',
-    foto: '/assets/novedades/juventud-unida-defensores-la-boca-2026.webp',
-    fotoAlt: 'La terna arbitral de AADEP con los capitanes de Juventud Unida y Defensores de La Boca antes del partido',
-  },
-  {
-    id: 'cuartos-regional-federal-san-juan-2026',
-    fecha: '2026-10-25',
-    categoria: 'Designaciones',
-    titulo: 'Cuartos de final del Regional Federal Amateur: Unión de Villa Krause vs Desamparados',
-    resumen:
-      'Fabrizio Lipari fue el árbitro principal de la ida de cuartos de final en el Estadio del Bicentenario de San Juan, que terminó 1 a 1.',
-    texto:
-      'Por AADEP, Fabrizio Lipari como árbitro principal y Alejo Alfonso como cuarto árbitro. Los asistentes fueron Maximiliano Vacca y Brandon Mansilla, de otra asociación.\n\nEl partido de ida de los cuartos de final del Torneo Regional Federal Amateur, entre Unión de Villa Krause y Desamparados, se jugó el 25 de octubre en el Estadio del Bicentenario (San Juan) y terminó 1 a 1.',
-    foto: '/assets/novedades/cuartos-regional-federal-san-juan-2026.webp',
-    fotoAlt: 'Los cuatro árbitros del partido en el Estadio del Bicentenario de San Juan',
-  },
-  {
-    id: 'final-regional-federal-ida-2026',
-    fecha: '2026-02-01',
-    categoria: 'Finales',
-    titulo: 'Final de ida del Torneo Regional Federal Amateur: Juventud Unida vs Ben Hur',
-    resumen:
-      'Una cuaterna de AADEP dirigió la final de ida entre Juventud Unida (Gualeguaychú) y Ben Hur (Rafaela), con Leandro Domínguez como árbitro principal.',
-    texto:
-      'Árbitro principal: Leandro Domínguez. Asistentes: Lautaro Tuninetti y Agustín Loyola. Cuarto árbitro: Fabrizio Lipari.\n\nLa final de ida se jugó el 1 de febrero.',
-    foto: '/assets/novedades/final-regional-federal-ida-2026.webp',
-    fotoAlt: 'Los cuatro árbitros de AADEP salen a la cancha por el túnel inflable antes de la final',
-  },
-  {
-    id: 'final-copa-pais-2025',
-    fecha: '2025-10-31',
-    categoria: 'Finales',
-    titulo: 'Final de la Copa País 2025: Liga Cañadense vs Liga Tandilense',
-    resumen: 'Matías Billone Carpio fue el árbitro de la final única, en el estadio de Douglas Haig, en Pergamino.',
-    texto:
-      'Árbitro: Matías Billone Carpio. Asistentes: Matías González y Antonella Pajón. Cuarto árbitro: Christian Verna.\n\nDomingo 2 de noviembre a las 16 h, en el estadio de Douglas Haig (Pergamino, Buenos Aires).',
-    foto: '/assets/novedades/final-copa-pais-2025.webp',
-    fotoAlt: 'Matías Billone Carpio en la placa de la final de la Copa País 2025',
-    link: { url: 'https://www.instagram.com/aadep_cordoba/p/DQdEIY7ke0b/', texto: 'Ver en Instagram' },
-  },
-  {
-    id: 'final-copa-cordoba-femenina-2025',
-    fecha: '2025-12-06',
-    categoria: 'Finales',
-    titulo: 'Final de la Copa Córdoba Femenina: Instituto vs Belgrano',
-    resumen: 'AADEP estuvo a cargo del arbitraje de la final de la Copa Córdoba Femenina, de la Liga Cordobesa de Fútbol.',
-    foto: '/assets/novedades/final-copa-cordoba-femenina-2025.webp',
-    fotoAlt: 'Las árbitras y las capitanas de Instituto y Belgrano antes de la final',
-    link: { url: 'https://www.instagram.com/aadep_cordoba/p/DR7mcIkEakS/', texto: 'Ver en Instagram' },
-  },
-  {
-    id: 'final-liga-independiente-2025',
-    fecha: '2025-12-05',
-    categoria: 'Finales',
-    titulo: 'Final de la Liga Independiente: Juventud Católica vs Luque',
-    resumen: 'AADEP estuvo en la final de vuelta entre Juventud Católica (Río Segundo) y la Asociación Deportiva y Cultural Luque.',
-    foto: '/assets/novedades/final-liga-independiente-2025.webp',
-    fotoAlt: 'La terna arbitral y los capitanes antes de la final de la Liga Independiente',
-    link: { url: 'https://www.instagram.com/aadep_cordoba/p/DR5QHlOkdv9/', texto: 'Ver en Instagram' },
-  },
-  {
-    id: 'final-liga-regional-sur-2025',
-    fecha: '2025-12-18',
-    categoria: 'Finales',
-    titulo: 'Final de la Liga Regional del Sur: Newbery y Everton vs San Carlos',
-    resumen: 'AADEP dirigió la final de vuelta entre Newbery y Everton (Cruz Alta) y San Carlos (Los Surgentes).',
-    foto: '/assets/novedades/final-liga-regional-sur-2025.webp',
-    fotoAlt: 'La terna arbitral de la final de la Liga Regional del Sur',
-    link: { url: 'https://www.instagram.com/aadep_cordoba/p/DSaXq5GEXq1/', texto: 'Ver en Instagram' },
-  },
-  {
-    id: 'final-liga-beccar-varela-2025',
-    fecha: '2025-11-27',
-    categoria: 'Finales',
-    titulo: 'Final de la Liga Beccar Varela 2025: Lambert vs Olimpo',
-    resumen: 'AADEP estuvo en la final de vuelta entre Lambert (Monte Maíz) y Olimpo (Laborde).',
-    foto: '/assets/novedades/final-liga-beccar-varela-2025.webp',
-    fotoAlt: 'La terna arbitral y los capitanes antes de la final de la Liga Beccar Varela',
-    link: { url: 'https://www.instagram.com/aadep_cordoba/p/DRkxeTmkeEL/', texto: 'Ver en Instagram' },
-  },
-  {
-    id: 'final-liga-beccar-varela-2026',
-    fecha: '2026-08-20',
-    categoria: 'Finales',
-    titulo: 'Final de la Liga Beccar Varela 2026: Lambert vs Olimpo',
-    resumen: 'Por segunda temporada seguida, AADEP dirigió la final de vuelta entre Lambert (Monte Maíz) y Olimpo (Laborde).',
-    foto: '/assets/novedades/final-liga-beccar-varela-2026.webp',
-    fotoAlt: 'La terna arbitral y los capitanes antes de la final de la Liga Beccar Varela 2026',
-    link: { url: 'https://www.instagram.com/aadep_cordoba/p/DcRfLVDie21/', texto: 'Ver en Instagram' },
-  },
-  {
-    id: 'final-liga-roca-2026',
-    fecha: '2026-08-04',
-    categoria: 'Finales',
-    titulo: 'Final de la Liga General Roca: Cultural del Campillo vs Recreativo Estrellas',
-    resumen: 'AADEP dirigió la final de vuelta de la Liga General Roca.',
-    foto: '/assets/novedades/final-liga-roca-2026.webp',
-    fotoAlt: 'La terna arbitral y los capitanes antes de la final de la Liga General Roca',
-    link: { url: 'https://www.instagram.com/aadep_cordoba/p/Dbot2tqRRGo/', texto: 'Ver en Instagram' },
-  },
-  {
-    id: 'final-liga-regional-sur-primera-2026',
-    fecha: '2026-07-08',
-    categoria: 'Finales',
-    titulo: 'Final de ida de la Liga Regional del Sur: Sporting vs Sportivo',
-    resumen: 'AADEP dirigió la final de ida de Primera entre Sporting y Sportivo.',
-    foto: '/assets/novedades/final-liga-regional-sur-primera-2026.webp',
-    fotoAlt: 'La terna arbitral y los capitanes antes de la final de ida de Primera',
-    link: { url: 'https://www.instagram.com/aadep_cordoba/p/DajQ06_RrmX/', texto: 'Ver en Instagram' },
-  },
-  {
-    id: 'final-liga-regional-sur-reserva-2026',
-    fecha: '2026-07-08',
-    categoria: 'Finales',
-    titulo: 'Final de ida de Reserva en la Liga Regional del Sur: San Carlos vs Sportivo',
-    resumen: 'AADEP dirigió la final de ida de Reserva entre San Carlos y Sportivo.',
-    foto: '/assets/novedades/final-liga-regional-sur-reserva-2026.webp',
-    fotoAlt: 'La terna arbitral y los capitanes antes de la final de ida de Reserva',
-    link: { url: 'https://www.instagram.com/aadep_cordoba/p/DajLQoSRMZk/', texto: 'Ver en Instagram' },
   },
 ];
 

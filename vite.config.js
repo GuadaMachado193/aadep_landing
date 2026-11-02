@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  // Rutas absolutas desde la raíz del dominio: con varias páginas (/, /curso/, /novedades/)
+  // Rutas absolutas desde la raíz del dominio: con varias páginas (/, /curso/, /novedades/, /designaciones/)
   // las relativas apuntarían a /curso/assets/. El sitio tiene que servirse en la raíz (aadep.com.ar).
   base: '/',
   server: {
@@ -18,6 +18,7 @@ export default defineConfig({
         main: resolve(import.meta.dirname, 'index.html'),
         curso: resolve(import.meta.dirname, 'curso/index.html'),
         novedades: resolve(import.meta.dirname, 'novedades/index.html'),
+        designaciones: resolve(import.meta.dirname, 'designaciones/index.html'),
       },
     },
   },

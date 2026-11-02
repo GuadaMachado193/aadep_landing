@@ -12,8 +12,8 @@ export default function Novedades() {
     <section className="novedades" id="novedades">
       <div className="container">
         <div className="section-header">
-          <h2>Novedades</h2>
-          <p>Lo último de la asociación: designaciones, cursos y actividades</p>
+          <h2>Noticias y novedades</h2>
+          <p>Lo último de la asociación: formación, cursos y actividades</p>
         </div>
         <div className="novedades-grid">
           {ultimas.map((novedad) => (

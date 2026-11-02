@@ -1,25 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BotonWhatsapp from '../components/BotonWhatsapp';
 import NovedadCard from '../components/NovedadCard';
 import { novedadesOrdenadas } from '../data/novedades';
+import { useAnclaDestacada } from '../hooks/useAnclaDestacada';
 import '../styles/novedades.css';
 
 // Página /novedades/: todas las novedades de src/data/novedades.js, de la más reciente a la más vieja
 export default function NovedadesPagina() {
   const lista = novedadesOrdenadas();
-  const [destacada, setDestacada] = useState(null);
-
-  // Al llegar desde la landing (/novedades/#id) el navegador busca el ancla antes de que React
-  // dibuje la lista, así que el scroll y el resaltado se hacen acá, una vez montada.
-  useEffect(() => {
-    const id = decodeURIComponent(window.location.hash.slice(1));
-    const elemento = id && document.getElementById(id);
-    if (!elemento) return;
-    elemento.scrollIntoView();
-    setDestacada(id);
-  }, []);
+  const destacada = useAnclaDestacada();
 
   return (
     <>
@@ -28,8 +19,8 @@ export default function NovedadesPagina() {
       <main>
         <section className="novedades-hero">
           <div className="container">
-            <h1>Novedades</h1>
-            <p>Designaciones, cursos, resultados y actividades de la Asociación de Árbitros Deportivos de Córdoba.</p>
+            <h1>Noticias y novedades</h1>
+            <p>Formación, cursos y actividades de la Asociación de Árbitros Deportivos de Córdoba.</p>
           </div>
         </section>
 
